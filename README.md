@@ -1,5 +1,5 @@
 # TRR 265
-> This project handles the analysis of the TRR 265 data.
+> This project handles the analysis of the TRR 265 data...
 
 
 This file will become your README and also the index of your documentation.
