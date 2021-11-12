@@ -8,6 +8,6 @@ modules = []
 
 doc_url = "https://hgzech.github.io/trr265/"
 
-git_url = "https://github.com/hgzech/trr265/tree/{branch}/"
+git_url = "https://github.com/hgzech/trr265/tree/master/"
 
 def custom_doc_links(name): return None
