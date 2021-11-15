@@ -12,6 +12,9 @@ entries:
     - output: web,pdf
       title: Core
       url: core.html
+    - output: web,pdf
+      title: Data Provider
+      url: data_provider.html
     output: web
     title: trr265
   output: web
