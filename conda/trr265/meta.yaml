@@ -1,0 +1,32 @@
+package:
+  name: trr265
+  version: 0.0.1
+source:
+  sha256: 14b02d66915a22ce4580257fa880ef6c87ccb550c44ce882df39adc1b65a2918
+  url: https://files.pythonhosted.org/packages/37/8f/93ba9e9bb8c74b85fef30c1088e5fbc5014feacdb8852bbee7ff52dbae03/trr265-0.0.1.tar.gz
+about:
+  dev_url: https://hgzech.github.io
+  doc_url: https://hgzech.github.io
+  home: https://hgzech.github.io
+  license: Apache Software
+  license_family: APACHE
+  summary: The TRR 265 analysis pipeline.
+build:
+  noarch: python
+  number: '0'
+  script: '{{ PYTHON }} -m pip install . -vv'
+extra:
+  recipe-maintainers:
+  - hgzech
+requirements:
+  host:
+  - pip
+  - python
+  - packaging
+  run:
+  - pip
+  - python
+  - packaging
+test:
+  imports:
+  - trr265
