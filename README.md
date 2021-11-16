@@ -8,10 +8,6 @@
 
 ## How to use
 
-Fill me in please! Don't forget code examples:
-
-!pip install trr265
-
 ```python
 #%load_ext autoreload
 #%autoreload 2
@@ -200,3 +196,24 @@ dp.get_two_day_data().iloc[:20][['participant','date','MDBF_zufrieden','g_alc']]
 </div>
 
 
+
+## Required data
+
+### Phone screening
+- data/external/b7_participants.xlsx <- from Hilmar
+- data/raw/phonescreening.csv <- from redcap
+- data/external/phone_codebook.html <- from redcap
+
+### Basic assessment (from redcap)
+- data/raw/ba.csv <- from redcap
+- data/external/ba_codebook.html <- from redcap
+
+### Movisens
+- all basic assessment data (see above)
+- data/raw/mov_data_b.csv
+- data/raw/mov_data_d.csv
+- data/raw/mov_data_m.csv
+- data/raw/starting_dates_b.csv
+- data/raw/starting_dates_d.csv
+- data/raw/starting_dates_m.csv
+- data/external/alcohol_per_drink.csv <- from Hilmar

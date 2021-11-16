@@ -1,9 +1,9 @@
 package:
   name: trr265
-  version: 0.0.3
+  version: 0.0.4
 source:
-  sha256: 4b043b70996b96fc94bf5bb0d9e4bf76bfbee6fcf407731b52fb5c84484d87b1
-  url: https://files.pythonhosted.org/packages/75/15/265b0c611d711f9bd49ddfdb2dec7d9a048ae9e8cf09fb0d9c252476d82d/trr265-0.0.3.tar.gz
+  sha256: cab83585449478e13ee230ff47942a8f0ff5c23be499a0afebc88fdbe516a12d
+  url: https://files.pythonhosted.org/packages/69/51/b447cf20658d9e1fcc5b63340a9e17371aa32706d78268036b560e541594/trr265-0.0.4.tar.gz
 about:
   dev_url: https://hgzech.github.io
   doc_url: https://hgzech.github.io
