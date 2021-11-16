@@ -6,8 +6,8 @@ title: TRR 265
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "This module handle's analysis of the TRR265 data."
-description: "This module handle's analysis of the TRR265 data."
+summary: "This module handles analysis of the TRR265 data."
+description: "This module handles analysis of the TRR265 data."
 nb_path: "notebooks/index.ipynb"
 ---
 <!--
@@ -29,13 +29,6 @@ nb_path: "notebooks/index.ipynb"
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>stub: To get started, download all the required data. Into the following folder structures:</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Install">Install<a class="anchor-link" href="#Install"> </a></h2>
@@ -76,9 +69,10 @@ nb_path: "notebooks/index.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">trr265.data_provider</span> <span class="kn">import</span> <span class="n">DataProvider</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#%autoreload 2</span>
+<span class="kn">from</span> <span class="nn">trr265.data_provider</span> <span class="kn">import</span> <span class="n">DataProvider</span>
 <span class="n">dp</span> <span class="o">=</span> <span class="n">DataProvider</span><span class="p">(</span><span class="s1">&#39;/Users/hilmarzech/Projects/trr265/trr265/data/&#39;</span><span class="p">)</span> <span class="c1"># Path to data folder (containing raw, interim, external, and processed)</span>
-<span class="n">dp</span><span class="o">.</span><span class="n">get_two_day_data</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span>
+<span class="n">dp</span><span class="o">.</span><span class="n">get_two_day_data</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">20</span><span class="p">][[</span><span class="s1">&#39;participant&#39;</span><span class="p">,</span><span class="s1">&#39;date&#39;</span><span class="p">,</span><span class="s1">&#39;MDBF_zufrieden&#39;</span><span class="p">,</span><span class="s1">&#39;g_alc&#39;</span><span class="p">]]</span>
 </pre></div>
 
     </div>
@@ -90,17 +84,185 @@ nb_path: "notebooks/index.ipynb"
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">/var/folders/16/2wxbnpk5321f8g40bxf0ht_h0000gn/T/ipykernel_84713/2255965172.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">from</span> trr265<span class="ansi-blue-fg">.</span>data_provider <span class="ansi-green-fg">import</span> DataProvider
-<span class="ansi-green-intense-fg ansi-bold">      2</span> dp <span class="ansi-blue-fg">=</span> DataProvider<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;/Users/hilmarzech/Projects/trr265/trr265/data/&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-red-fg"># Path to data folder (containing raw, interim, external, and processed)</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>dp<span class="ansi-blue-fg">.</span>get_two_day_data<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>iloc<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">20</span><span class="ansi-blue-fg">]</span>
 
-<span class="ansi-red-fg">AttributeError</span>: &#39;DataProvider&#39; object has no attribute &#39;get_two_day_data&#39;</pre>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>participant</th>
+      <th>date</th>
+      <th>MDBF_zufrieden</th>
+      <th>g_alc</th>
+    </tr>
+    <tr>
+      <th>two_day_index</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>b001</td>
+      <td>2020-02-22</td>
+      <td>NaN</td>
+      <td>6.4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>b001</td>
+      <td>2020-02-23</td>
+      <td>NaN</td>
+      <td>35.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>b001</td>
+      <td>2020-02-24</td>
+      <td>2.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>b001</td>
+      <td>2020-02-25</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>b001</td>
+      <td>2020-02-26</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>b001</td>
+      <td>2020-02-27</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>b001</td>
+      <td>2020-02-28</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>b001</td>
+      <td>2020-02-29</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>b001</td>
+      <td>2020-03-01</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>b001</td>
+      <td>2020-03-02</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>b001</td>
+      <td>2020-03-03</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>b001</td>
+      <td>2020-03-04</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>b001</td>
+      <td>2020-03-05</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>b001</td>
+      <td>2020-03-06</td>
+      <td>NaN</td>
+      <td>57.6</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>b001</td>
+      <td>2020-03-07</td>
+      <td>3.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>b001</td>
+      <td>2020-03-08</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>b001</td>
+      <td>2020-03-09</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>b001</td>
+      <td>2020-03-10</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>b001</td>
+      <td>2020-03-11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>b001</td>
+      <td>2020-03-12</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>

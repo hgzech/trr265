@@ -14,7 +14,10 @@ index = {"DataProvider": "01_data_provider.ipynb",
          "DataProvider.get_phone_data": "01_data_provider.ipynb",
          "DataProvider.get_ba_codebook": "01_data_provider.ipynb",
          "DataProvider.get_ba_data": "01_data_provider.ipynb",
-         "DataProvider.get_duplicate_mov_ids": "01_data_provider.ipynb"}
+         "DataProvider.get_duplicate_mov_ids": "01_data_provider.ipynb",
+         "DataProvider.get_mov_data": "01_data_provider.ipynb",
+         "DataProvider.get_alcohol_per_drink": "01_data_provider.ipynb",
+         "DataProvider.get_two_day_data": "01_data_provider.ipynb"}
 
 modules = ["data_provider.py"]
 

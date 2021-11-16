@@ -1,9 +1,9 @@
 package:
   name: trr265
-  version: 0.0.2
+  version: 0.0.3
 source:
-  sha256: 10e16868374c5e40c4690054f9ef4b02fe16de785477c788a0f219daaffd7a2b
-  url: https://files.pythonhosted.org/packages/04/ec/d63b16898426c4844d704d4e965970f79782999ec79f12979d17b8f9dc0a/trr265-0.0.2.tar.gz
+  sha256: 4b043b70996b96fc94bf5bb0d9e4bf76bfbee6fcf407731b52fb5c84484d87b1
+  url: https://files.pythonhosted.org/packages/75/15/265b0c611d711f9bd49ddfdb2dec7d9a048ae9e8cf09fb0d9c252476d82d/trr265-0.0.3.tar.gz
 about:
   dev_url: https://hgzech.github.io
   doc_url: https://hgzech.github.io
@@ -29,6 +29,10 @@ requirements:
   - pyarrow
   - openpyxl
   - lxml
+  - matplotlib
+  - seaborn
+  - biur
+  - fastcore
   run:
   - pip
   - python
@@ -39,6 +43,10 @@ requirements:
   - pyarrow
   - openpyxl
   - lxml
+  - matplotlib
+  - seaborn
+  - biur
+  - fastcore
 test:
   imports:
   - trr265

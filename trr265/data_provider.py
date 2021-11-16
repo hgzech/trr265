@@ -22,11 +22,21 @@ class DataProvider():
         assert os.path.isdir(self.raw), "Raw data folder not found."
         assert os.path.isdir(self.interim), "Interim data folder not found."
         assert os.path.isdir(self.processed), "Processed data folder not found."
+        # Phone screening files
         self.phonescreening_data_path = os.path.join(self.raw, "phonescreening.csv")
         self.phone_codebook_path = os.path.join(self.external, "phone_codebook.html")
+        # Basic assessment files
         self.ba_codebook_path = os.path.join(self.external, "ba_codebook.html")
         self.ba_data_path = os.path.join(self.raw, "ba.csv")
         self.b07_participants_path = os.path.join(self.external, "b7_participants.xlsx")
+        # Movisense data
+        self.mov_berlin_path = os.path.join(self.raw, "mov_data_b.csv")
+        self.mov_dresden_path = os.path.join(self.raw, "mov_data_d.csv")
+        self.mov_mannheim_path = os.path.join(self.raw, "mov_data_m.csv")
+        self.mov_berlin_starting_dates_path = os.path.join(self.raw, "starting_dates_b.html")
+        self.mov_dresden_starting_dates_path = os.path.join(self.raw, "starting_dates_d.html")
+        self.mov_mannheim_starting_dates_path = os.path.join(self.raw, "starting_dates_m.html")
+        self.alcohol_per_drink_path = os.path.join(self.external,'alcohol_per_drink.csv')
 
 
 #export
@@ -286,3 +296,130 @@ def get_duplicate_mov_ids(self:DataProvider):
     except:
         pass
     return replace_dict
+
+# Cell
+@patch
+@get_efficiently
+def get_mov_data(self:DataProvider):
+    """
+    This function gets Movisense data
+    1) We create unique participnat IDs (e.g. "b001"; this is necessary as sites use overapping IDs)
+    2) We merge double IDs, so participants with two IDs only have one (for this duplicate_ids.csv has to be updated)
+    3) We remove pilot participants
+    4) We get starting dates (from the participant overviews in movisense; downloaded as html)
+    5) We calculate sampling days and end dates based on the starting dates
+    """
+    # Loading raw data
+    mov_berlin = pd.read_csv(self.mov_berlin_path, sep = ';')
+    mov_dresden = pd.read_csv(self.mov_dresden_path, sep = ';')
+    mov_mannheim = pd.read_csv(self.mov_mannheim_path, sep = ';')
+
+    # Merging (participant numbers repeat so we add the first letter of location)
+    mov_berlin['location'] = 'berlin'
+    mov_dresden['location'] = 'dresden'
+    mov_mannheim['location'] = 'mannheim'
+    df = pd.concat([mov_berlin,mov_dresden,mov_mannheim])
+    df['participant'] =  df['location'].str[0] + df.Participant.apply(lambda x: '%03d'%int(x))
+    df['trigger_date'] = pd.to_datetime(df.Trigger_date + ' ' + df.Trigger_time)
+
+    # Merging double IDs (for participants with several movisense IDs)
+    df['participant'] = df.participant.replace(self.get_duplicate_mov_ids())
+
+    # Removing pilot participants
+    df = df[~df.Participant.astype(str).str.contains('test')]
+    df = df[~df.participant.isin(['m157'])]
+
+    # Adding starting dates to get sampling days
+    def get_starting_dates(path, pp_prefix = ''):
+        soup = bs(open(path).read())
+        ids = [int(x.text) for x in soup.find_all("td", class_ = 'simpleId')]
+        c_dates = [x.find_all("span")[0]['title'] for x in soup.find_all("td", class_ = 'coupleDate')]
+        s_dates = [x['value'] for x in soup.find_all("input", class_ = 'dp startDate')]
+        df = pd.DataFrame({'participant':ids,'coupling_date':c_dates,'starting_date':s_dates})
+        df['coupling_date'] = pd.to_datetime(df.coupling_date)
+        df['starting_date'] = pd.to_datetime(df.starting_date)
+        df.starting_date.fillna(df.coupling_date,inplace = True)
+        df['participant'] = pp_prefix + df.participant.apply(lambda x: '%03d'%int(x))
+        return df
+
+    starting_dates = pd.concat([
+    get_starting_dates(self.mov_berlin_starting_dates_path, 'b'),
+    get_starting_dates(self.mov_dresden_starting_dates_path, 'd'),
+    get_starting_dates(self.mov_mannheim_starting_dates_path, 'm')
+    ])
+    # For participants with several movisense IDs we use the first coupling date
+    starting_dates.participant.replace(self.get_duplicate_mov_ids(), inplace = True)
+    starting_dates = starting_dates.groupby('participant')[['starting_date','coupling_date']].min().reset_index()
+    df = df.merge(starting_dates, on="participant", how = 'left', indicator = True)
+    # Checking if starting dates were downloaded
+    if "left_only" in df._merge.unique():
+        no_starting_dates = df.query('_merge == "left_only"').participant.unique()
+        print("Starting dates missing for participants below.  Did you download the participant overviews as html?", no_starting_dates)
+    # Calculating movisense sampling day, adding date and end_date
+    df['sampling_day'] = (df['trigger_date'] - df['starting_date']).dt.days + 1
+    df['date'] = df.trigger_date.dt.date
+    df['end_date'] = df.date + pd.DateOffset(days = 365)
+    df.index.rename('mov_index',inplace = True)
+    return df
+
+# Cell
+@patch
+def get_alcohol_per_drink(self:DataProvider):
+    if not os.path.isfile(self.alcohol_per_drink_path):
+        return None
+    else:
+        return pd.read_csv(self.alcohol_per_drink_path)
+
+# Cell
+@patch
+@get_efficiently
+def get_two_day_data(self:DataProvider):
+    """Gets two-day which are a subset of mov_data
+    1) We select two-day forms and turn the dataframe into one row per participant-date (Form repetitions on the same day are removed)
+    2) We reduce all drinking questions to an easily readable dictionary of drink amounts.
+    3) We add missing data for dates on which we did not receive answers (starting 2 days before starting date up to 365 days after)
+    4) We shift answers from retrospective drinking questions backwards to the adequate date (e.g. one day back for yesterday questions)
+    """
+    mov_data = self.get_mov_data().reset_index()
+    drinking_columns = [c for c in mov_data.columns if c.startswith("Anzahl") and "10day" not in c]
+    mdbf_columns = [c for c in mov_data.columns if "MDBF" in c and "INT" not in c]
+    two_day_columns = ['mov_index','starting_date','end_date','sampling_day'] + drinking_columns + mdbf_columns + ['soziale_isolation','alternative_rewards','craving','Limit','Kontrolle']
+    # 1) Turning df into one line per date
+    two_day_forms = ["Coverage","Soziale Isolation","Craving","MDBF","Alternative Rewards","Limits & Control"]
+    df = mov_data.sort_values(by=['participant','trigger_date','Form','Trigger_counter'])
+    df = df[df.Form.isin(two_day_forms)].groupby(["participant","date"])[two_day_columns].first().dropna(how='all').reset_index()
+    # 2) Turning drinking answers into dictionaries
+    df[drinking_columns].fillna(0,inplace = True)
+    df['drinks_gestern'] = df[[c for c in drinking_columns if "vorgestern" not in c]].fillna(0).agg(lambda x: x.to_dict(), axis=1)
+    df['drinks_vorgestern'] = df[[c for c in drinking_columns if "vorgestern" in c]].fillna(0).agg(lambda x: x.to_dict(), axis=1)
+    # Adding missing values
+    def add_missing_data(df):
+        dates = pd.date_range(df.starting_date.iloc[0]-pd.DateOffset(days = 2), df.end_date.iloc[0])
+        df = df.reindex(dates)
+        df.index.names = ['date']
+        df[['starting_date','sampling_day']] = df[['starting_date','sampling_day']].bfill().ffill()
+        return df
+    df = df.set_index('date').groupby('participant').apply(add_missing_data).drop(columns='participant').reset_index()
+
+    # 3) Shifting back retrospective answers
+    df['drinks'] = df['drinks_gestern'].shift(-1) # Drinks yesterday get shifted back one day
+    df['drinks'].fillna(df['drinks_vorgestern'].shift(-2), inplace = True) # Drinks before yesterday shift back two days
+    df['limit'] = df.Limit.ffill(limit=8) # Limit gets repeated forward for eight days
+    df['control'] = df.Kontrolle.bfill(limit=8) # Control is repeated backward for eight days
+    # 4) Calculating daily alcohol consumption in grams
+    alc_dict = {"Anzahl"+k:v for k,v in self.get_alcohol_per_drink().set_index('drink')['ml_alc_per_drink'].to_dict().items()}
+    def calculate_g_alc(x):
+        if x != x:
+            ml_alc = np.nan
+        else:
+            ml_alc = 0
+            for k,v in x.items():
+                if v > 0:
+                    ml_alc += alc_dict[k.split('_')[0]] * v
+        return ml_alc * .8
+    df['g_alc']  = df.drinks.apply(calculate_g_alc)
+    # Returning relevant columns only
+    df = df.reset_index()
+    df['sampling_day'] = df.groupby('participant').starting_date.cumcount() + 1
+    df.index.rename('two_day_index',inplace = True)
+    return df[['mov_index','participant','starting_date','date','sampling_day'] + mdbf_columns + ['soziale_isolation','alternative_rewards','craving','limit','control','drinks','g_alc']]
