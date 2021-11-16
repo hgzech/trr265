@@ -36,12 +36,6 @@ nb_path: "notebooks/01_data_provider.ipynb"
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Functions">Functions<a class="anchor-link" href="#Functions"> </a></h2>
-</div>
-</div>
-</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -53,7 +47,7 @@ nb_path: "notebooks/01_data_provider.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_data_folder" class="doc_header"><code>get_data_folder</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L15" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_data_folder</code>()</p>
+<h2 id="DataProvider" class="doc_header"><code>class</code> <code>DataProvider</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L13" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DataProvider</code>(<strong><code>data_folder_path</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -70,30 +64,6 @@ nb_path: "notebooks/01_data_provider.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">get_data_folder</span><span class="p">()),</span> <span class="s2">&quot;Main data folder not found.&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
 <div class="output_wrapper">
 <div class="output">
 
@@ -101,287 +71,10 @@ nb_path: "notebooks/01_data_provider.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_raw" class="doc_header"><code>get_raw</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L20" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_raw</code>()</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">get_raw</span><span class="p">()),</span> <span class="s2">&quot;Raw data folder not found.&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_external" class="doc_header"><code>get_external</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L24" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_external</code>()</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">get_external</span><span class="p">()),</span> <span class="s2">&quot;External data folder not found.&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_interim" class="doc_header"><code>get_interim</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L28" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_interim</code>()</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">get_interim</span><span class="p">()),</span> <span class="s2">&quot;Interim data folder not found.&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_processed" class="doc_header"><code>get_processed</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L32" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_processed</code>()</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">get_processed</span><span class="p">()),</span> <span class="s2">&quot;Processed data folder not found.&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="store_interim" class="doc_header"><code>store_interim</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L36" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>store_interim</code>(<strong><code>df</code></strong>, <strong><code>filename</code></strong>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_interim" class="doc_header"><code>load_interim</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L41" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_interim</code>(<strong><code>filename</code></strong>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">storing_test</span><span class="p">():</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;test&quot;</span><span class="p">:[</span><span class="mi">4</span><span class="p">]})</span>
-    <span class="c1"># Storing the dataframe</span>
-    <span class="n">store_interim</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;storing_test&#39;</span><span class="p">)</span>
-    <span class="c1"># Reloading it and comparing to original</span>
-    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">load_interim</span><span class="p">(</span><span class="s1">&#39;storing_test&#39;</span><span class="p">))</span>
-<span class="k">assert</span> <span class="n">storing_test</span><span class="p">(),</span> <span class="s2">&quot;Data storage is failing.&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_efficiently" class="doc_header"><code>get_efficiently</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L45" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_efficiently</code>(<strong><code>func</code></strong>)</p>
+<h4 id="get_efficiently" class="doc_header"><code>get_efficiently</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L33" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_efficiently</code>(<strong><code>func</code></strong>)</p>
 </blockquote>
 <p>This decorator wraps around functions that get data and handles data storage.
-If the output from the function hasn't been stored yet, it stores it in a .parquet file
+If the output from the function hasn't been stored yet, it stores it in "[path_to_interim]/[function_name_without_get].parquet"
 If the output from the function has been stored already, it loads the stored file instead of running the function (unless update is specified as True)</p>
 
 </div>
@@ -401,96 +94,26 @@ If the output from the function has been stored already, it loads the stored fil
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Getting-phone-screening-data">Getting phone screening data<a class="anchor-link" href="#Getting-phone-screening-data"> </a></h3><blockquote><p>ToDo:The hardcoded file paths should be made relative.</p>
-</blockquote>
-
-</div>
-</div>
-</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-<div class="output_wrapper">
-<div class="output">
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dp</span> <span class="o">=</span> <span class="n">DataProvider</span><span class="p">(</span><span class="s1">&#39;/Users/hilmarzech/Projects/trr265/trr265/data/&#39;</span><span class="p">)</span>
+</pre></div>
 
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_phone_codebook" class="doc_header"><code>get_phone_codebook</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L67" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_phone_codebook</code>()</p>
-</blockquote>
-
-</div>
-
-</div>
-
+    </div>
 </div>
 </div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="determine_phone_b07" class="doc_header"><code>determine_phone_b07</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L92" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>determine_phone_b07</code>(<strong><code>df</code></strong>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_phone_data" class="doc_header"><code>load_phone_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L128" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_phone_data</code>()</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Getting-baseline-data">Getting baseline data<a class="anchor-link" href="#Getting-baseline-data"> </a></h3>
+<h2 id="Functions">Functions<a class="anchor-link" href="#Functions"> </a></h2>
 </div>
 </div>
 </div>
@@ -505,7 +128,217 @@ If the output from the function has been stored already, it loads the stored fil
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="check_participant_id" class="doc_header"><code>check_participant_id</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L149" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>check_participant_id</code>(<strong><code>x</code></strong>)</p>
+<h4 id="DataProvider.store_interim" class="doc_header"><code>DataProvider.store_interim</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L57" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.store_interim</code>(<strong><code>df</code></strong>, <strong><code>filename</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="DataProvider.load_interim" class="doc_header"><code>DataProvider.load_interim</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L63" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.load_interim</code>(<strong><code>filename</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">storing_test</span><span class="p">(</span><span class="n">dp</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;test&quot;</span><span class="p">:[</span><span class="mi">4</span><span class="p">]})</span>
+    <span class="c1"># Storing the dataframe</span>
+    <span class="n">dp</span><span class="o">.</span><span class="n">store_interim</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;storing_test&#39;</span><span class="p">)</span>
+    <span class="c1"># Reloading it and comparing to original</span>
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">dp</span><span class="o">.</span><span class="n">load_interim</span><span class="p">(</span><span class="s1">&#39;storing_test&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">storing_test</span><span class="p">(</span><span class="n">dp</span><span class="p">),</span> <span class="s2">&quot;Data storage is failing.&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Getting-phone-screening-data">Getting phone screening data<a class="anchor-link" href="#Getting-phone-screening-data"> </a></h3><blockquote><p>This functions get the phone screening data from redcap.  To run them, first go to redcap and download the phonescreening data to 'raw/phonescreening.csv' and the phonescreening codebook to 'external/phone_codebook.html'.  You also need the external/b7_participants.xlsx (if it's not in the cloned package, ask Hilmar for it.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="DataProvider.get_phone_codebook" class="doc_header"><code>DataProvider.get_phone_codebook</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L68" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_phone_codebook</code>()</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="s1">&#39;participant_id&#39;</span> <span class="ow">in</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_phone_codebook</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">variable</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s2">&quot;Failed to load phone_codebook.html&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Preparing phone_codebook
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p>Initially, participants from b07 were stored in the same RedCap project as S01 participants.  This function attempts to disentangle the two</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="DataProvider.determine_phone_b07" class="doc_header"><code>DataProvider.determine_phone_b07</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L95" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.determine_phone_b07</code>(<strong><code>df</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="DataProvider.check_participant_id" class="doc_header"><code>DataProvider.check_participant_id</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L132" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.check_participant_id</code>(<strong><code>x</code></strong>)</p>
 </blockquote>
 <p>This function checks whether a participant ID is numerical and lower than 20000.</p>
 
@@ -529,16 +362,42 @@ If the output from the function has been stored already, it loads the stored fil
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="DataProvider.test_check_participant_id" class="doc_header"><code>DataProvider.test_check_participant_id</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L145" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.test_check_participant_id</code>()</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_check_participant_id</span><span class="p">():</span>
-    <span class="n">failed</span> <span class="o">=</span> <span class="n">check_participant_id</span><span class="p">(</span><span class="s1">&#39;test10&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span> <span class="c1"># Example of a bad participant ID</span>
-    <span class="n">passed</span> <span class="o">=</span> <span class="n">check_participant_id</span><span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span> <span class="c1"># Example of a good participant ID</span>
-    <span class="k">return</span> <span class="n">failed</span> <span class="ow">and</span> <span class="n">passed</span>
-    
-<span class="k">assert</span> <span class="n">test_check_participant_id</span><span class="p">(),</span> <span class="s2">&quot;Participant ID check is not working&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">dp</span><span class="o">.</span><span class="n">test_check_participant_id</span><span class="p">(),</span> <span class="s2">&quot;Participant ID check is not working&quot;</span>
 </pre></div>
 
     </div>
@@ -559,8 +418,9 @@ If the output from the function has been stored already, it loads the stored fil
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_efficiently.<locals>.wrapper" class="doc_header"><code>get_efficiently.<locals>.wrapper</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L161" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_efficiently.<locals>.wrapper</code>()</p>
+<h4 id="DataProvider.set_dtypes" class="doc_header"><code>DataProvider.set_dtypes</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L152" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.set_dtypes</code>(<strong><code>data</code></strong>, <strong><code>codebook</code></strong>)</p>
 </blockquote>
+<p>This function automatically adjust data types of redcap data based on the redcap codebooks</p>
 
 </div>
 
@@ -590,7 +450,7 @@ If the output from the function has been stored already, it loads the stored fil
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="set_dtypes" class="doc_header"><code>set_dtypes</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L189" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_dtypes</code>(<strong><code>data</code></strong>, <strong><code>codebook</code></strong>)</p>
+<h4 id="DataProvider.get_phone_data" class="doc_header"><code>DataProvider.get_phone_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L191" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_phone_data</code>()</p>
 </blockquote>
 
 </div>
@@ -607,6 +467,50 @@ If the output from the function has been stored already, it loads the stored fil
     
 <div class="cell border-box-sizing code_cell rendered">
 
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="s1">&#39;screen_caller&#39;</span> <span class="ow">in</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_phone_data</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s2">&quot;Failed to load phone data.&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Preparing phone_data
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Getting-baseline-data">Getting baseline data<a class="anchor-link" href="#Getting-baseline-data"> </a></h3>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
 <div class="output_wrapper">
 <div class="output">
 
@@ -614,7 +518,76 @@ If the output from the function has been stored already, it loads the stored fil
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_efficiently.<locals>.wrapper" class="doc_header"><code>get_efficiently.<locals>.wrapper</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L227" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_efficiently.<locals>.wrapper</code>()</p>
+<h4 id="DataProvider.get_ba_codebook" class="doc_header"><code>DataProvider.get_ba_codebook</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L216" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_ba_codebook</code>()</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="s1">&#39;variable&#39;</span> <span class="ow">in</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_ba_codebook</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">),</span> <span class="s2">&quot;Codebook did not load correctly&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Preparing ba_codebook
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>{% include warning.html content='get_ba_data uses a different way to remove b07 participants.  This should be adjusted to use the same function as get_phone_data' %}</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="DataProvider.get_ba_data" class="doc_header"><code>DataProvider.get_ba_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L243" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_ba_data</code>()</p>
 </blockquote>
 <p>This function reads in baseline data from redcap, filters out pilot data, and creates movisens IDs.</p>
 
@@ -632,19 +605,41 @@ If the output from the function has been stored already, it loads the stored fil
     
 <div class="cell border-box-sizing code_cell rendered">
 
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p>ToDo:This should be defined as a "slow test"</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">check_ba</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_ba_data</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[[</span><span class="s1">&#39;participant_id&#39;</span><span class="p">,</span><span class="s1">&#39;redcap_event_name&#39;</span><span class="p">,</span><span class="s1">&#39;redcap_repeat_instrument&#39;</span><span class="p">,</span><span class="s1">&#39;redcap_repeat_instance&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="k">assert</span> <span class="n">check_ba</span><span class="p">,</span> <span class="s2">&quot;Redcap BA data was not properly formatted&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 <div class="output_wrapper">
 <div class="output">
 
 <div class="output_area">
 
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_duplicate_mov_ids" class="doc_header"><code>get_duplicate_mov_ids</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L260" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_duplicate_mov_ids</code>()</p>
-</blockquote>
-<p>This function creates a dictionary mapping old to new movisens IDs.</p>
-
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Preparing ba_data
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -656,6 +651,348 @@ If the output from the function has been stored already, it loads the stored fil
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dp</span><span class="o">.</span><span class="n">get_ba_data</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Preparing ba_data
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>participant_id</th>
+      <th>redcap_event_name</th>
+      <th>redcap_repeat_instrument</th>
+      <th>redcap_repeat_instance</th>
+      <th>redcap_survey_identifier</th>
+      <th>bx_pams</th>
+      <th>bx_exist120</th>
+      <th>study_id</th>
+      <th>bx_date</th>
+      <th>languages</th>
+      <th>...</th>
+      <th>bx_anruf_o2</th>
+      <th>bx_anruf_o2txt</th>
+      <th>bx_anruf_o3</th>
+      <th>anrufprotokoll_complete</th>
+      <th>center</th>
+      <th>mov_id</th>
+      <th>mov_id_old</th>
+      <th>mov_id_old_2</th>
+      <th>is_b07</th>
+      <th>is_female</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>67</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>10101.0</td>
+      <td>2020-06-25</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>d</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>67</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>at_home_qsu</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>d</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>67</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>at_home_bis15</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>d</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>67</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>at_home_cerq</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>d</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>67</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>at_home_ad</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>d</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6748</th>
+      <td>11631</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>at_home_oslo</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>m</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6749</th>
+      <td>11631</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>at_home_pss10</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>m</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6750</th>
+      <td>11631</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>at_home_ucla</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>m</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6751</th>
+      <td>11631</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>at_home_pain</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>m</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6752</th>
+      <td>11631</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>at_home_sleep</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>m</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>6753 rows × 3401 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
@@ -677,14 +1014,9 @@ If the output from the function has been stored already, it loads the stored fil
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_efficiently.<locals>.wrapper" class="doc_header"><code>get_efficiently.<locals>.wrapper</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L275" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_efficiently.<locals>.wrapper</code>()</p>
+<h4 id="DataProvider.get_duplicate_mov_ids" class="doc_header"><code>DataProvider.get_duplicate_mov_ids</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L277" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_duplicate_mov_ids</code>()</p>
 </blockquote>
-<p>This function gets Movisense data
-1) We create unique participnat IDs (e.g. "b001"; this is necessary as sites use overapping IDs)
-2) We merge double IDs, so participants with two IDs only have one (for this duplicate_ids.csv has to be updated)
-3) We remove pilot participants
-4) We get starting dates (from the participant overviews in movisense; downloaded as html)
-5) We calculate sampling days and end dates based on the starting dates</p>
+<p>This function creates a dictionary mapping old to new movisens IDs.</p>
 
 </div>
 
@@ -699,6 +1031,119 @@ If the output from the function has been stored already, it loads the stored fil
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">dp</span><span class="o">.</span><span class="n">get_duplicate_mov_ids</span><span class="p">()),</span> <span class="s2">&quot;Could not load duplicate_mov_ids&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@patch</span>
+<span class="nd">@get_efficiently</span>
+<span class="k">def</span> <span class="nf">get_mov_data</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span><span class="n">DataProvider</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function gets Movisense data</span>
+<span class="sd">    1) We create unique participnat IDs (e.g. &quot;b001&quot;; this is necessary as sites use overapping IDs)</span>
+<span class="sd">    2) We merge double IDs, so participants with two IDs only have one (for this duplicate_ids.csv has to be updated)</span>
+<span class="sd">    3) We remove pilot participants</span>
+<span class="sd">    4) We get starting dates (from the participant overviews in movisense; downloaded as html)</span>
+<span class="sd">    5) We calculate sampling days and end dates based on the starting dates</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Loading raw data</span>
+    <span class="n">mov_berlin</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">get_raw</span><span class="p">(),</span> <span class="s2">&quot;mov_data_b.csv&quot;</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+    <span class="n">mov_dresden</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">get_raw</span><span class="p">(),</span> <span class="s2">&quot;mov_data_d.csv&quot;</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+    <span class="n">mov_mannheim</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">get_raw</span><span class="p">(),</span> <span class="s2">&quot;mov_data_m.csv&quot;</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+        
+    <span class="c1"># Merging (participant numbers repeat so we add the first letter of location)</span>
+    <span class="n">mov_berlin</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;berlin&#39;</span>
+    <span class="n">mov_dresden</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;dresden&#39;</span>
+    <span class="n">mov_mannheim</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mannheim&#39;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">mov_berlin</span><span class="p">,</span><span class="n">mov_dresden</span><span class="p">,</span><span class="n">mov_mannheim</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;participant&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">df</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">Participant</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%03d</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">int</span>(x))
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;trigger_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Trigger_date</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">Trigger_time</span><span class="p">)</span>
+    
+    <span class="c1"># Merging double IDs (for participants with several movisense IDs)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;participant&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">participant</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">get_duplicate_mov_ids</span><span class="p">())</span>
+    
+    <span class="c1"># Removing pilot participants</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">Participant</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">participant</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;m157&#39;</span><span class="p">])]</span>
+    
+    <span class="c1"># Adding starting dates to get sampling days</span>
+    <span class="k">def</span> <span class="nf">get_starting_dates</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">pp_prefix</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">bs</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;td&quot;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;simpleId&#39;</span><span class="p">)]</span>
+        <span class="n">c_dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;td&quot;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;coupleDate&#39;</span><span class="p">)]</span>
+        <span class="n">s_dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;dp startDate&#39;</span><span class="p">)]</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;participant&#39;</span><span class="p">:</span><span class="n">ids</span><span class="p">,</span><span class="s1">&#39;coupling_date&#39;</span><span class="p">:</span><span class="n">c_dates</span><span class="p">,</span><span class="s1">&#39;starting_date&#39;</span><span class="p">:</span><span class="n">s_dates</span><span class="p">})</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;coupling_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">coupling_date</span><span class="p">)</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;starting_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">starting_date</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">starting_date</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">coupling_date</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;participant&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pp_prefix</span> <span class="o">+</span> <span class="n">df</span><span class="o">.</span><span class="n">participant</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%03d</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">int</span>(x))
+        <span class="k">return</span> <span class="n">df</span>
+    
+    <span class="n">starting_dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span>
+    <span class="n">get_starting_dates</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">get_raw</span><span class="p">(),</span> <span class="s2">&quot;starting_dates_b.html&quot;</span><span class="p">),</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span>
+    <span class="n">get_starting_dates</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">get_raw</span><span class="p">(),</span> <span class="s2">&quot;starting_dates_d.html&quot;</span><span class="p">),</span> <span class="s1">&#39;d&#39;</span><span class="p">),</span>
+    <span class="n">get_starting_dates</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">get_raw</span><span class="p">(),</span> <span class="s2">&quot;starting_dates_m.html&quot;</span><span class="p">),</span> <span class="s1">&#39;m&#39;</span><span class="p">)</span>
+    <span class="p">])</span>
+    <span class="c1"># For participants with several movisense IDs we use the first coupling date</span>
+    <span class="n">starting_dates</span><span class="o">.</span><span class="n">participant</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">get_duplicate_mov_ids</span><span class="p">(),</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">starting_dates</span> <span class="o">=</span> <span class="n">starting_dates</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;participant&#39;</span><span class="p">)[[</span><span class="s1">&#39;starting_date&#39;</span><span class="p">,</span><span class="s1">&#39;coupling_date&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">starting_dates</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;participant&quot;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">indicator</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Checking if starting dates were downloaded</span>
+    <span class="k">if</span> <span class="s2">&quot;left_only&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">_merge</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+        <span class="n">no_starting_dates</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;_merge == &quot;left_only&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">participant</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting dates missing for participants below.  Did you download the participant overviews as html?&quot;</span><span class="p">,</span> <span class="n">no_starting_dates</span><span class="p">)</span>
+    <span class="c1"># Calculating movisense sampling day, adding date and end_date</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sampling_day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;trigger_date&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;starting_date&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">trigger_date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;end_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">DateOffset</span><span class="p">(</span><span class="n">days</span> <span class="o">=</span> <span class="mi">365</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;mov_index&#39;</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="s1">&#39;starting_date&#39;</span> <span class="ow">in</span> <span class="n">get_mov_data</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s2">&quot;Movisense data did not load correctly&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 </div>
     {% endraw %}
@@ -928,30 +1373,22 @@ If the output from the function has been stored already, it loads the stored fil
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-<div class="output_wrapper">
-<div class="output">
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@patch</span>
+<span class="k">def</span> <span class="nf">get_alcohol_per_drink</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span><span class="n">DataProvider</span><span class="p">):</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">get_external</span><span class="p">(),</span><span class="s1">&#39;alcohol_per_drink.csv&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
 
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_alcohol_per_drink" class="doc_header"><code>get_alcohol_per_drink</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L341" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_alcohol_per_drink</code>()</p>
-</blockquote>
-
+    </div>
 </div>
-
 </div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -976,35 +1413,67 @@ If the output from the function has been stored already, it loads the stored fil
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_efficiently.<locals>.wrapper" class="doc_header"><code>get_efficiently.<locals>.wrapper</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L349" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_efficiently.<locals>.wrapper</code>()</p>
-</blockquote>
-<p>Gets two-day which are a subset of mov_data
-1) We select two-day forms and turn the dataframe into one row per participant-date (Form repetitions on the same day are removed)
-2) We reduce all drinking questions to an easily readable dictionary of drink amounts.
-3) We add missing data for dates on which we did not receive answers (starting 2 days before starting date up to 365 days after)
-4) We shift answers from retrospective drinking questions backwards to the adequate date (e.g. one day back for yesterday questions)</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@patch</span>
+<span class="nd">@get_efficiently</span>
+<span class="k">def</span> <span class="nf">get_two_day_data</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span><span class="n">DataProvider</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Gets two-day which are a subset of mov_data</span>
+<span class="sd">    1) We select two-day forms and turn the dataframe into one row per participant-date (Form repetitions on the same day are removed)</span>
+<span class="sd">    2) We reduce all drinking questions to an easily readable dictionary of drink amounts.</span>
+<span class="sd">    3) We add missing data for dates on which we did not receive answers (starting 2 days before starting date up to 365 days after)</span>
+<span class="sd">    4) We shift answers from retrospective drinking questions backwards to the adequate date (e.g. one day back for yesterday questions) </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mov_data</span> <span class="o">=</span> <span class="n">get_mov_data</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">drinking_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">mov_data</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Anzahl&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">&quot;10day&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">c</span><span class="p">]</span>
+    <span class="n">mdbf_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">mov_data</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s2">&quot;MDBF&quot;</span> <span class="ow">in</span> <span class="n">c</span> <span class="ow">and</span> <span class="s2">&quot;INT&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">c</span><span class="p">]</span>
+    <span class="n">two_day_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mov_index&#39;</span><span class="p">,</span><span class="s1">&#39;starting_date&#39;</span><span class="p">,</span><span class="s1">&#39;end_date&#39;</span><span class="p">,</span><span class="s1">&#39;sampling_day&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">drinking_columns</span> <span class="o">+</span> <span class="n">mdbf_columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;soziale_isolation&#39;</span><span class="p">,</span><span class="s1">&#39;alternative_rewards&#39;</span><span class="p">,</span><span class="s1">&#39;craving&#39;</span><span class="p">,</span><span class="s1">&#39;Limit&#39;</span><span class="p">,</span><span class="s1">&#39;Kontrolle&#39;</span><span class="p">]</span>
+    <span class="c1"># 1) Turning df into one line per date</span>
+    <span class="n">two_day_forms</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Coverage&quot;</span><span class="p">,</span><span class="s2">&quot;Soziale Isolation&quot;</span><span class="p">,</span><span class="s2">&quot;Craving&quot;</span><span class="p">,</span><span class="s2">&quot;MDBF&quot;</span><span class="p">,</span><span class="s2">&quot;Alternative Rewards&quot;</span><span class="p">,</span><span class="s2">&quot;Limits &amp; Control&quot;</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">mov_data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;participant&#39;</span><span class="p">,</span><span class="s1">&#39;trigger_date&#39;</span><span class="p">,</span><span class="s1">&#39;Form&#39;</span><span class="p">,</span><span class="s1">&#39;Trigger_counter&#39;</span><span class="p">])</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Form</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">two_day_forms</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;participant&quot;</span><span class="p">,</span><span class="s2">&quot;date&quot;</span><span class="p">])[</span><span class="n">two_day_columns</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="c1"># 2) Turning drinking answers into dictionaries</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">drinking_columns</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;drinks_gestern&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">drinking_columns</span> <span class="k">if</span> <span class="s2">&quot;vorgestern&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">c</span><span class="p">]]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;drinks_vorgestern&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">drinking_columns</span> <span class="k">if</span> <span class="s2">&quot;vorgestern&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="p">]]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Adding missing values</span>
+    <span class="k">def</span> <span class="nf">add_missing_data</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+        <span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">starting_date</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">pd</span><span class="o">.</span><span class="n">DateOffset</span><span class="p">(</span><span class="n">days</span> <span class="o">=</span> <span class="mi">2</span><span class="p">),</span> <span class="n">df</span><span class="o">.</span><span class="n">end_date</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
+        <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;starting_date&#39;</span><span class="p">,</span><span class="s1">&#39;sampling_day&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;starting_date&#39;</span><span class="p">,</span><span class="s1">&#39;sampling_day&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">bfill</span><span class="p">()</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">df</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;participant&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">add_missing_data</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;participant&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
     
-<div class="cell border-box-sizing code_cell rendered">
+    <span class="c1"># 3) Shifting back retrospective answers</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;drinks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;drinks_gestern&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Drinks yesterday get shifted back one day</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;drinks&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;drinks_vorgestern&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="c1"># Drinks before yesterday shift back two days</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;limit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Limit</span><span class="o">.</span><span class="n">ffill</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># Limit gets repeated forward for eight days</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;control&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Kontrolle</span><span class="o">.</span><span class="n">bfill</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># Control is repeated backward for eight days</span>
+    <span class="c1"># 4) Calculating daily alcohol consumption in grams</span>
+    <span class="n">alc_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Anzahl&quot;</span><span class="o">+</span><span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">get_alcohol_per_drink</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;drink&#39;</span><span class="p">)[</span><span class="s1">&#39;ml_alc_per_drink&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="k">def</span> <span class="nf">calculate_g_alc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">x</span><span class="p">:</span>
+            <span class="n">ml_alc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ml_alc</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">ml_alc</span> <span class="o">+=</span> <span class="n">alc_dict</span><span class="p">[</span><span class="n">k</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">*</span> <span class="n">v</span>
+        <span class="k">return</span> <span class="n">ml_alc</span> <span class="o">*</span> <span class="mf">.8</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;g_alc&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drinks</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">calculate_g_alc</span><span class="p">)</span>
+    <span class="c1"># Returning relevant columns only</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sampling_day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;participant&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">starting_date</span><span class="o">.</span><span class="n">cumcount</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;two_day_index&#39;</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;mov_index&#39;</span><span class="p">,</span><span class="s1">&#39;participant&#39;</span><span class="p">,</span><span class="s1">&#39;starting_date&#39;</span><span class="p">,</span><span class="s1">&#39;date&#39;</span><span class="p">,</span><span class="s1">&#39;sampling_day&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">mdbf_columns</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;soziale_isolation&#39;</span><span class="p">,</span><span class="s1">&#39;alternative_rewards&#39;</span><span class="p">,</span><span class="s1">&#39;craving&#39;</span><span class="p">,</span><span class="s1">&#39;limit&#39;</span><span class="p">,</span><span class="s1">&#39;control&#39;</span><span class="p">,</span><span class="s1">&#39;drinks&#39;</span><span class="p">,</span><span class="s1">&#39;g_alc&#39;</span><span class="p">]]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 </div>
     {% endraw %}
@@ -1031,8 +1500,7 @@ If the output from the function has been stored already, it loads the stored fil
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Structure-of-two-day-data">Structure of two-day data<a class="anchor-link" href="#Structure-of-two-day-data"> </a></h4><blockquote><p>Note that sampling days run further than 365.  This should not be the case.</p>
-</blockquote>
+<h4 id="Structure-of-two-day-data">Structure of two-day data<a class="anchor-link" href="#Structure-of-two-day-data"> </a></h4><p>{% include warning.html content='Note that sampling days run further than 365.  This should not be the case.' %}</p>
 
 </div>
 </div>

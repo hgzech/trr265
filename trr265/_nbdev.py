@@ -2,25 +2,19 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"get_data_folder": "01_data_provider.ipynb",
-         "get_raw": "01_data_provider.ipynb",
-         "get_external": "01_data_provider.ipynb",
-         "get_interim": "01_data_provider.ipynb",
-         "get_processed": "01_data_provider.ipynb",
-         "store_interim": "01_data_provider.ipynb",
-         "load_interim": "01_data_provider.ipynb",
+index = {"DataProvider": "01_data_provider.ipynb",
          "get_efficiently": "01_data_provider.ipynb",
-         "get_phone_codebook": "01_data_provider.ipynb",
-         "determine_phone_b07": "01_data_provider.ipynb",
-         "load_phone_data": "01_data_provider.ipynb",
-         "check_participant_id": "01_data_provider.ipynb",
-         "get_ba_codebook": "01_data_provider.ipynb",
-         "set_dtypes": "01_data_provider.ipynb",
-         "get_ba_data": "01_data_provider.ipynb",
-         "get_duplicate_mov_ids": "01_data_provider.ipynb",
-         "get_mov_data": "01_data_provider.ipynb",
-         "get_alcohol_per_drink": "01_data_provider.ipynb",
-         "get_two_day_data": "01_data_provider.ipynb"}
+         "DataProvider.store_interim": "01_data_provider.ipynb",
+         "DataProvider.load_interim": "01_data_provider.ipynb",
+         "DataProvider.get_phone_codebook": "01_data_provider.ipynb",
+         "DataProvider.determine_phone_b07": "01_data_provider.ipynb",
+         "DataProvider.check_participant_id": "01_data_provider.ipynb",
+         "DataProvider.test_check_participant_id": "01_data_provider.ipynb",
+         "DataProvider.set_dtypes": "01_data_provider.ipynb",
+         "DataProvider.get_phone_data": "01_data_provider.ipynb",
+         "DataProvider.get_ba_codebook": "01_data_provider.ipynb",
+         "DataProvider.get_ba_data": "01_data_provider.ipynb",
+         "DataProvider.get_duplicate_mov_ids": "01_data_provider.ipynb"}
 
 modules = ["data_provider.py"]
 
