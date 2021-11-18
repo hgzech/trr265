@@ -21,8 +21,15 @@ index = {"DataProvider": "01_data_provider.ipynb",
          "GBEProvider": "02_gbe.ipynb",
          "GBEProvider.get_gbe_from_movisense": "02_gbe.ipynb",
          "GBEProvider.define_initial_dataset": "02_gbe.ipynb",
+         "GBEProvider.define_baseline_sessions": "02_gbe.ipynb",
+         "GBEProvider.find_gbe_game_starting_time": "02_gbe.ipynb",
+         "GBEProvider.check_time_between_sessions": "02_gbe.ipynb",
+         "time_between_sessions": "02_gbe.ipynb",
          "GBEProvider.get_gbe_data": "02_gbe.ipynb",
-         "GBEProvider.define_baseline_sessions": "02_gbe.ipynb"}
+         "GBEProvider.get_initial_baseline": "02_gbe.ipynb",
+         "GBEProvider.get_replication_baseline": "02_gbe.ipynb",
+         "GBEProvider.decode_gbe_string": "02_gbe.ipynb",
+         "GBEProvider.decode_gbe_strings": "02_gbe.ipynb"}
 
 modules = ["data_provider.py",
            "gbe.py"]
