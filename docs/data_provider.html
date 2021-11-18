@@ -420,7 +420,6 @@ If the output from the function has been stored already, it loads the stored fil
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="DataProvider.set_dtypes" class="doc_header"><code>DataProvider.set_dtypes</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L162" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.set_dtypes</code>(<strong><code>data</code></strong>, <strong><code>codebook</code></strong>)</p>
 </blockquote>
-<p>This function automatically adjust data types of redcap data based on the redcap codebooks</p>
 
 </div>
 
@@ -450,7 +449,7 @@ If the output from the function has been stored already, it loads the stored fil
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_phone_data" class="doc_header"><code>DataProvider.get_phone_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L201" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_phone_data</code>()</p>
+<h4 id="DataProvider.get_phone_data" class="doc_header"><code>DataProvider.get_phone_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L213" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_phone_data</code>()</p>
 </blockquote>
 
 </div>
@@ -477,24 +476,10 @@ If the output from the function has been stored already, it loads the stored fil
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="s1">&#39;screen_caller&#39;</span> <span class="ow">in</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_phone_data</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s2">&quot;Failed to load phone data.&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="s1">&#39;screen_caller&#39;</span> <span class="ow">in</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_phone_data</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s2">&quot;Failed to load phone data.&quot;</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Preparing phone_data
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -518,7 +503,7 @@ If the output from the function has been stored already, it loads the stored fil
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_ba_codebook" class="doc_header"><code>DataProvider.get_ba_codebook</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L226" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_ba_codebook</code>()</p>
+<h4 id="DataProvider.get_ba_codebook" class="doc_header"><code>DataProvider.get_ba_codebook</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L238" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_ba_codebook</code>()</p>
 </blockquote>
 
 </div>
@@ -587,7 +572,7 @@ If the output from the function has been stored already, it loads the stored fil
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_ba_data" class="doc_header"><code>DataProvider.get_ba_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L253" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_ba_data</code>()</p>
+<h4 id="DataProvider.get_ba_data" class="doc_header"><code>DataProvider.get_ba_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L265" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_ba_data</code>()</p>
 </blockquote>
 <p>This function reads in baseline data from redcap, filters out pilot data, and creates movisens IDs.</p>
 
@@ -1014,7 +999,7 @@ If the output from the function has been stored already, it loads the stored fil
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_duplicate_mov_ids" class="doc_header"><code>DataProvider.get_duplicate_mov_ids</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L287" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_duplicate_mov_ids</code>()</p>
+<h4 id="DataProvider.get_duplicate_mov_ids" class="doc_header"><code>DataProvider.get_duplicate_mov_ids</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L299" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_duplicate_mov_ids</code>()</p>
 </blockquote>
 <p>This function creates a dictionary mapping old to new movisens IDs.</p>
 
@@ -1063,7 +1048,7 @@ If the output from the function has been stored already, it loads the stored fil
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_mov_data" class="doc_header"><code>DataProvider.get_mov_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L301" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_mov_data</code>()</p>
+<h4 id="DataProvider.get_mov_data" class="doc_header"><code>DataProvider.get_mov_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L315" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_mov_data</code>()</p>
 </blockquote>
 <p>This function gets Movisense data
 1) We create unique participnat IDs (e.g. "b001"; this is necessary as sites use overapping IDs)
@@ -1089,6 +1074,13 @@ If the output from the function has been stored already, it loads the stored fil
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>{% include warning.html content='Note that some participants do not have associated redcap data (see below).  These participants are excluded from further data analyses.' %}</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1096,10 +1088,25 @@ If the output from the function has been stored already, it loads the stored fil
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="s1">&#39;starting_date&#39;</span> <span class="ow">in</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_mov_data</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s2">&quot;Movisense data did not load correctly&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_mov_data</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Preparing mov_data
+Participants: b186, d092, m158 have no associated redcap IDs and are excluded from the following analyses.
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1108,7 +1115,7 @@ If the output from the function has been stored already, it loads the stored fil
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Structure-of-movisense-data">Structure of movisense data<a class="anchor-link" href="#Structure-of-movisense-data"> </a></h4>
+<h4 id="Structure-of-movisense-data-(selected-columns)">Structure of movisense data (selected columns)<a class="anchor-link" href="#Structure-of-movisense-data-(selected-columns)"> </a></h4>
 </div>
 </div>
 </div>
@@ -1119,7 +1126,7 @@ If the output from the function has been stored already, it loads the stored fil
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dp</span><span class="o">.</span><span class="n">get_mov_data</span><span class="p">()[[</span><span class="s1">&#39;Participant&#39;</span><span class="p">,</span><span class="s1">&#39;participant&#39;</span><span class="p">,</span><span class="s1">&#39;starting_date&#39;</span><span class="p">,</span><span class="s1">&#39;Trigger&#39;</span><span class="p">,</span><span class="s1">&#39;Trigger_date&#39;</span><span class="p">,</span><span class="s1">&#39;Trigger_counter&#39;</span><span class="p">,</span><span class="s1">&#39;Form&#39;</span><span class="p">,</span><span class="s1">&#39;INT_Coverage_kleinesBier&#39;</span><span class="p">,</span><span class="s1">&#39;INT_Coverage_kleinerWeisswein&#39;</span><span class="p">]]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dp</span><span class="o">.</span><span class="n">get_mov_data</span><span class="p">()[[</span><span class="s1">&#39;participant&#39;</span><span class="p">,</span><span class="s1">&#39;starting_date&#39;</span><span class="p">,</span><span class="s1">&#39;Trigger&#39;</span><span class="p">,</span><span class="s1">&#39;Trigger_date&#39;</span><span class="p">,</span><span class="s1">&#39;Trigger_counter&#39;</span><span class="p">,</span><span class="s1">&#39;Form&#39;</span><span class="p">,</span><span class="s1">&#39;INT_Coverage_kleinesBier&#39;</span><span class="p">,</span><span class="s1">&#39;INT_Coverage_kleinerWeisswein&#39;</span><span class="p">]]</span>
 </pre></div>
 
     </div>
@@ -1151,7 +1158,6 @@ If the output from the function has been stored already, it loads the stored fil
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Participant</th>
       <th>participant</th>
       <th>starting_date</th>
       <th>Trigger</th>
@@ -1171,13 +1177,11 @@ If the output from the function has been stored already, it loads the stored fil
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
       <td>b001</td>
       <td>2020-02-24</td>
       <td>Button Pressed: Spiele starten und Initialfrag...</td>
@@ -1189,7 +1193,6 @@ If the output from the function has been stored already, it loads the stored fil
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
       <td>b001</td>
       <td>2020-02-24</td>
       <td>Fixed Time: 09:00</td>
@@ -1201,7 +1204,6 @@ If the output from the function has been stored already, it loads the stored fil
     </tr>
     <tr>
       <th>2</th>
-      <td>1</td>
       <td>b001</td>
       <td>2020-02-24</td>
       <td>Fixed Time: 12:00</td>
@@ -1213,7 +1215,6 @@ If the output from the function has been stored already, it loads the stored fil
     </tr>
     <tr>
       <th>3</th>
-      <td>1</td>
       <td>b001</td>
       <td>2020-02-24</td>
       <td>Fixed Time: 12:00</td>
@@ -1225,7 +1226,6 @@ If the output from the function has been stored already, it loads the stored fil
     </tr>
     <tr>
       <th>4</th>
-      <td>1</td>
       <td>b001</td>
       <td>2020-02-24</td>
       <td>Fixed Time: 12:00</td>
@@ -1245,13 +1245,11 @@ If the output from the function has been stored already, it loads the stored fil
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>200176</th>
-      <td>235</td>
+      <th>200030</th>
       <td>m235</td>
-      <td>2021-08-16</td>
+      <td>2021-05-17</td>
       <td>Button Pressed: Spiele starten und Initialfrag...</td>
       <td>2021-08-16</td>
       <td>16</td>
@@ -1260,10 +1258,9 @@ If the output from the function has been stored already, it loads the stored fil
       <td>NaN</td>
     </tr>
     <tr>
-      <th>200177</th>
-      <td>235</td>
+      <th>200031</th>
       <td>m235</td>
-      <td>2021-08-16</td>
+      <td>2021-05-17</td>
       <td>Button Pressed: Spiele starten und Initialfrag...</td>
       <td>2021-08-16</td>
       <td>16</td>
@@ -1272,10 +1269,9 @@ If the output from the function has been stored already, it loads the stored fil
       <td>NaN</td>
     </tr>
     <tr>
-      <th>200178</th>
-      <td>235</td>
+      <th>200032</th>
       <td>m235</td>
-      <td>2021-08-16</td>
+      <td>2021-05-17</td>
       <td>Button Pressed: Spiele starten und Initialfrag...</td>
       <td>2021-08-16</td>
       <td>16</td>
@@ -1284,10 +1280,9 @@ If the output from the function has been stored already, it loads the stored fil
       <td>NaN</td>
     </tr>
     <tr>
-      <th>200179</th>
-      <td>235</td>
+      <th>200033</th>
       <td>m235</td>
-      <td>2021-08-16</td>
+      <td>2021-05-17</td>
       <td>Button Pressed: Spiele starten und Initialfrag...</td>
       <td>2021-08-16</td>
       <td>16</td>
@@ -1296,10 +1291,9 @@ If the output from the function has been stored already, it loads the stored fil
       <td>NaN</td>
     </tr>
     <tr>
-      <th>200180</th>
-      <td>235</td>
+      <th>200034</th>
       <td>m235</td>
-      <td>2021-08-16</td>
+      <td>2021-05-17</td>
       <td>Button Pressed: Spiele starten und Initialfrag...</td>
       <td>2021-08-16</td>
       <td>16</td>
@@ -1309,7 +1303,7 @@ If the output from the function has been stored already, it loads the stored fil
     </tr>
   </tbody>
 </table>
-<p>200181 rows × 9 columns</p>
+<p>199456 rows × 8 columns</p>
 </div>
 </div>
 
@@ -1339,7 +1333,7 @@ If the output from the function has been stored already, it loads the stored fil
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_alcohol_per_drink" class="doc_header"><code>DataProvider.get_alcohol_per_drink</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L366" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_alcohol_per_drink</code>()</p>
+<h4 id="DataProvider.get_alcohol_per_drink" class="doc_header"><code>DataProvider.get_alcohol_per_drink</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L390" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_alcohol_per_drink</code>()</p>
 </blockquote>
 
 </div>
@@ -1607,7 +1601,7 @@ If the output from the function has been stored already, it loads the stored fil
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_two_day_data" class="doc_header"><code>DataProvider.get_two_day_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L374" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_two_day_data</code>()</p>
+<h4 id="DataProvider.get_two_day_data" class="doc_header"><code>DataProvider.get_two_day_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L398" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_two_day_data</code>()</p>
 </blockquote>
 <p>Gets two-day which are a subset of mov_data
 1) We select two-day forms and turn the dataframe into one row per participant-date (Form repetitions on the same day are removed)
@@ -1639,7 +1633,7 @@ If the output from the function has been stored already, it loads the stored fil
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dp</span><span class="o">.</span><span class="n">get_two_day_data</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_two_day_data</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1657,283 +1651,6 @@ If the output from the function has been stored already, it loads the stored fil
 </div>
 </div>
 
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>mov_index</th>
-      <th>participant</th>
-      <th>starting_date</th>
-      <th>date</th>
-      <th>sampling_day</th>
-      <th>MDBF_zufrieden</th>
-      <th>MDBF_ruhig</th>
-      <th>MDBF_wohl</th>
-      <th>MDBF_entspannt</th>
-      <th>soziale_isolation</th>
-      <th>alternative_rewards</th>
-      <th>craving</th>
-      <th>limit</th>
-      <th>control</th>
-      <th>drinks</th>
-      <th>g_alc</th>
-    </tr>
-    <tr>
-      <th>two_day_index</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>NaN</td>
-      <td>b001</td>
-      <td>2020-02-24</td>
-      <td>2020-02-22</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>{'AnzahlKleinesBier_vorgestern': 0.0, 'AnzahlM...</td>
-      <td>6.4</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>NaN</td>
-      <td>b001</td>
-      <td>2020-02-24</td>
-      <td>2020-02-23</td>
-      <td>2</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>{'AnzahlKleinesBier': 0.0, 'AnzahlMittlereBier...</td>
-      <td>35.2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>6.0</td>
-      <td>b001</td>
-      <td>2020-02-24</td>
-      <td>2020-02-24</td>
-      <td>3</td>
-      <td>2.0</td>
-      <td>6.0</td>
-      <td>7.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>NaN</td>
-      <td>b001</td>
-      <td>2020-02-24</td>
-      <td>2020-02-25</td>
-      <td>4</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NaN</td>
-      <td>b001</td>
-      <td>2020-02-24</td>
-      <td>2020-02-26</td>
-      <td>5</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>139779</th>
-      <td>NaN</td>
-      <td>m234</td>
-      <td>2021-08-16</td>
-      <td>2022-08-12</td>
-      <td>364</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>139780</th>
-      <td>NaN</td>
-      <td>m234</td>
-      <td>2021-08-16</td>
-      <td>2022-08-13</td>
-      <td>365</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>139781</th>
-      <td>NaN</td>
-      <td>m234</td>
-      <td>2021-08-16</td>
-      <td>2022-08-14</td>
-      <td>366</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>139782</th>
-      <td>NaN</td>
-      <td>m234</td>
-      <td>2021-08-16</td>
-      <td>2022-08-15</td>
-      <td>367</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>139783</th>
-      <td>NaN</td>
-      <td>m234</td>
-      <td>2021-08-16</td>
-      <td>2022-08-16</td>
-      <td>368</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-<p>139784 rows × 16 columns</p>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -1948,7 +1665,7 @@ If the output from the function has been stored already, it loads the stored fil
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_one_line_per_participant_day</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_two_day_data</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;participant&#39;</span><span class="p">,</span><span class="s1">&#39;date&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_two_day_data</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;participant&#39;</span><span class="p">,</span><span class="s1">&#39;date&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>
 
 <span class="k">assert</span> <span class="n">test_one_line_per_participant_day</span><span class="p">(),</span> <span class="s2">&quot;Two day data does not have one line per participant day.&quot;</span>
 </pre></div>
@@ -2095,55 +1812,55 @@ If the output from the function has been stored already, it loads the stored fil
       <td>...</td>
     </tr>
     <tr>
-      <th>139779</th>
+      <th>134247</th>
       <td>NaN</td>
-      <td>m234</td>
-      <td>2022-08-12</td>
-      <td>2021-08-16</td>
+      <td>m271</td>
+      <td>2021-12-10</td>
+      <td>2020-12-14</td>
       <td>364</td>
       <td>NaN</td>
       <td>None</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>139780</th>
+      <th>134248</th>
       <td>NaN</td>
-      <td>m234</td>
-      <td>2022-08-13</td>
-      <td>2021-08-16</td>
+      <td>m271</td>
+      <td>2021-12-11</td>
+      <td>2020-12-14</td>
       <td>365</td>
       <td>NaN</td>
       <td>None</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>139781</th>
+      <th>134249</th>
       <td>NaN</td>
-      <td>m234</td>
-      <td>2022-08-14</td>
-      <td>2021-08-16</td>
+      <td>m271</td>
+      <td>2021-12-12</td>
+      <td>2020-12-14</td>
       <td>366</td>
       <td>NaN</td>
       <td>None</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>139782</th>
+      <th>134250</th>
       <td>NaN</td>
-      <td>m234</td>
-      <td>2022-08-15</td>
-      <td>2021-08-16</td>
+      <td>m271</td>
+      <td>2021-12-13</td>
+      <td>2020-12-14</td>
       <td>367</td>
       <td>NaN</td>
       <td>None</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>139783</th>
+      <th>134251</th>
       <td>NaN</td>
-      <td>m234</td>
-      <td>2022-08-16</td>
-      <td>2021-08-16</td>
+      <td>m271</td>
+      <td>2021-12-14</td>
+      <td>2020-12-14</td>
       <td>368</td>
       <td>NaN</td>
       <td>None</td>
@@ -2151,7 +1868,7 @@ If the output from the function has been stored already, it loads the stored fil
     </tr>
   </tbody>
 </table>
-<p>139784 rows × 8 columns</p>
+<p>134252 rows × 8 columns</p>
 </div>
 </div>
 

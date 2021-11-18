@@ -161,6 +161,12 @@ def test_check_participant_id(self:DataProvider):
 # Cell
 @patch
 def set_dtypes(self:DataProvider, data, codebook):
+    def number_or_nan(x):
+        try:
+            float(x)
+            return x
+        except:
+            return np.nan
     '''This function automatically adjust data types of redcap data based on the redcap codebooks'''
     # Parsing type
     codebook['type'] = codebook["Feld Attribute (Feld-Typ, Prüfung, Auswahlen, Verzweigungslogik, Berechnungen, usw.)"].apply(lambda x: x.split(',')[0])
@@ -188,9 +194,15 @@ def set_dtypes(self:DataProvider, data, codebook):
     assert len(set(num_columns).intersection(set(dt_columns)))==0, set(num_columns).intersection(set(dt_columns))
     assert len(set(text_columns).intersection(set(dt_columns)))==0, set(text_columns).intersection(set(dt_columns))
 
+
+
     for c in num_columns:
         data[c].replace("A 'MySQL server has gone away' error was detected.  It is possible that there was an actual database issue, but it is more likely that REDCap detected this request as a duplicate and killed it.", np.nan, inplace = True)
-        data[c] = data[c].astype(float)
+        try:
+            data[c] = data[c].astype(float)
+        except:
+            data[c] = data[c].apply(number_or_nan).astype(float)
+            print("Values with wrong dtype in %s"%c)
     data[text_columns] = data[text_columns].astype(str).replace('nan',np.nan)
 
     for c in dt_columns:
@@ -265,7 +277,7 @@ def get_ba_data(self:DataProvider):
         df[new_id].fillna('nan',inplace = True)
         df.loc[df[new_id].str.contains('nan'),new_id] = np.nan
     # Removing test participants
-    remove = ['050744', 'hdfghadgfh', 'LindaEngel', 'test', 'Test001', 'Test001a', 'test0011', 'test0012', 'test0013', 'test0014', 'test0015', 'test002', 'test00229', 'test007', 'test01', 'test012', 'test013', 'test1', 'test2', 'test4', 'test12', 'test999', 'test2021', 'test345345', 'testneu', 'testtest', 'test_0720', 'test_10', 'test_GA', 'Test_JH','test0016','891752080', 'pipingTest', 'test0001', 'test00012', 'test0012a', 'test0015a', 'test0017', 'test10', 'test20212', 'testJohn01', 'test_00213', 'test_00233', 'test_00271', 'test_003', 'test_004', 'test_11_26', 'Test_MS']
+    remove = ['050744', 'hdfghadgfh', 'LindaEngel', 'test', 'Test001', 'Test001a', 'test0011', 'test0012', 'test0013', 'test0014', 'test0015', 'test002', 'test00229', 'test007', 'test01', 'test012', 'test013', 'test1', 'test2', 'test4', 'test12', 'test999', 'test2021', 'test345345', 'testneu', 'testtest', 'test_0720', 'test_10', 'test_GA', 'Test_JH','test0016','891752080', 'pipingTest', 'test0001', 'test00012', 'test0012a', 'test0015a', 'test0017', 'test10', 'test20212', 'testJohn01', 'test_00213', 'test_00233', 'test_00271', 'test_003', 'test_004', 'test_11_26', 'Test_MS','898922899', 'tesst', 'test0002', 'test0908', 'test092384750398475', 'test43', 'test123', 'test1233', 'test3425', 'test123456', 'test1234567', 'testfu3', 'test_888', 'test_999', 'test_98375983745', 'Test_Übung']
     df = df[~df.participant_id.astype(str).isin(remove)]
     # Checking participant ids (to find new test participants)
     bad_ids = df[~df.participant_id.apply(self.check_participant_id)].participant_id.unique()
@@ -295,6 +307,8 @@ def get_duplicate_mov_ids(self:DataProvider):
         del replace_dict[np.nan]
     except:
         pass
+    del replace_dict[None]
+    replace_dict['d033'] = 'd092' # This participant's data is currently missing in redcap, but they did change ID from 33 to 92
     return replace_dict
 
 # Cell
@@ -320,14 +334,16 @@ def get_mov_data(self:DataProvider):
     mov_mannheim['location'] = 'mannheim'
     df = pd.concat([mov_berlin,mov_dresden,mov_mannheim])
     df['participant'] =  df['location'].str[0] + df.Participant.apply(lambda x: '%03d'%int(x))
+    df.drop(columns = 'Participant', inplace = True) # Dropping old participant column to avoid mistakes
     df['trigger_date'] = pd.to_datetime(df.Trigger_date + ' ' + df.Trigger_time)
 
     # Merging double IDs (for participants with several movisense IDs)
     df['participant'] = df.participant.replace(self.get_duplicate_mov_ids())
 
     # Removing pilot participants
-    df = df[~df.Participant.astype(str).str.contains('test')]
-    df = df[~df.participant.isin(['m157'])]
+    df = df[~df.participant.astype(str).str.contains('test')]
+    df = df[~df.participant.isin(['m157', 'b010', 'b006', 'd001', 'd002', 'd042', 'm024', 'm028', 'm071', 'm079', 'm107'])]
+
 
     # Adding starting dates to get sampling days
     def get_starting_dates(path, pp_prefix = ''):
@@ -360,6 +376,14 @@ def get_mov_data(self:DataProvider):
     df['date'] = df.trigger_date.dt.date
     df['end_date'] = df.date + pd.DateOffset(days = 365)
     df.index.rename('mov_index',inplace = True)
+    # Adding redcap IDs
+    ids_table = self.get_ba_data()[['participant_id','mov_id']].query('mov_id==mov_id').groupby('mov_id').first()
+    ids_table.columns = ['redcap_id']
+    df = df.merge(ids_table, left_on='participant', right_index = True, how = 'left')
+    # Filtering out participants with no associated redcap data
+    no_redcap = df.query("redcap_id.isna()").participant.unique()
+    print("Participants: %s have no associated redcap IDs and are excluded from the following analyses."%', '.join(no_redcap))
+    df = df[df.redcap_id.isna()==False]
     return df
 
 # Cell

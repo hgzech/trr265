@@ -2,6 +2,7 @@
   "trr265": {
     "Overview": "/",
     "Core": "core.html",
-    "Data Provider": "data_provider.html"
+    "Data Provider": "data_provider.html",
+    "GBE": "gbe.html"
   }
 }

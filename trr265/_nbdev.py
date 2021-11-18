@@ -17,9 +17,15 @@ index = {"DataProvider": "01_data_provider.ipynb",
          "DataProvider.get_duplicate_mov_ids": "01_data_provider.ipynb",
          "DataProvider.get_mov_data": "01_data_provider.ipynb",
          "DataProvider.get_alcohol_per_drink": "01_data_provider.ipynb",
-         "DataProvider.get_two_day_data": "01_data_provider.ipynb"}
+         "DataProvider.get_two_day_data": "01_data_provider.ipynb",
+         "GBEProvider": "02_gbe.ipynb",
+         "GBEProvider.get_gbe_from_movisense": "02_gbe.ipynb",
+         "GBEProvider.define_initial_dataset": "02_gbe.ipynb",
+         "GBEProvider.get_gbe_data": "02_gbe.ipynb",
+         "GBEProvider.define_baseline_sessions": "02_gbe.ipynb"}
 
-modules = ["data_provider.py"]
+modules = ["data_provider.py",
+           "gbe.py"]
 
 doc_url = "https://hgzech.github.io/trr265/"
 
