@@ -1,0 +1,15 @@
+def add_implied_data(df):
+    df['duplication'] = df.groupby(['participant','session_number','trial_type','level']).cumcount()
+    _df = df.set_index(['participant','session_number','trial_type','level','duplication']).sort_index()[['success']]#.loc[('b001','Session 1')]
+    levels = list(range(3,11))
+    ## THIS LINE INTRODUCES NON EXISTING SESSIONS
+    new_index = pd.MultiIndex.from_product([_df.reset_index().participant.unique(), _df.reset_index().session_number.unique(),_df.reset_index().trial_type.unique(), levels, [0,1]],names = ['participant','session_number','trial_type','level','duplication'])
+    _df = _df.reindex(new_index)
+    _df['implied_success'] = _df.groupby(level=['participant','session_number','trial_type','level']).transform(np.max).fillna(0)
+    _df['implied_success'] = _df.success.fillna(_df.implied_success)
+    _df = _df.reset_index()
+    _df['implied_success'] = _df.implied_success# * _df.level
+    _df = _df.merge(df.groupby(['participant','session_number']).gbe_index.first().reset_index(), on = ['participant','session_number'], how = 'outer' )
+    _df = _df[_df.gbe_index.isnull()==False]
+    implied_success = _df.groupby(['gbe_index']).implied_success.mean()
+    return _df, implied_success

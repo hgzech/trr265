@@ -48,7 +48,7 @@ def get_efficiently(func):
     """
     def w(*args, update = False, columns = None, path = None, **kw):
         _self = args[0] # Getting self to grab interim path from DataProvider
-        var_name = func.__name__.replace('get_','')
+        var_name = func.__name__.replace('__get_','').replace('get_','')
         file_path = os.path.join(_self.interim, "%s.parquet"%var_name)
         if os.path.exists(file_path) and (update == False):
             result =  pd.read_parquet(file_path, columns = columns)

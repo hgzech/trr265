@@ -18,20 +18,28 @@ index = {"DataProvider": "01_data_provider.ipynb",
          "DataProvider.get_mov_data": "01_data_provider.ipynb",
          "DataProvider.get_alcohol_per_drink": "01_data_provider.ipynb",
          "DataProvider.get_two_day_data": "01_data_provider.ipynb",
-         "GBEProvider": "02_gbe.ipynb",
-         "GBEProvider.get_gbe_from_movisense": "02_gbe.ipynb",
-         "GBEProvider.define_initial_dataset": "02_gbe.ipynb",
-         "GBEProvider.define_baseline_sessions": "02_gbe.ipynb",
-         "GBEProvider.find_gbe_game_starting_time": "02_gbe.ipynb",
-         "GBEProvider.check_time_between_sessions": "02_gbe.ipynb",
-         "GBEProvider.get_gbe_data": "02_gbe.ipynb",
-         "GBEProvider.get_initial_baseline": "02_gbe.ipynb",
-         "GBEProvider.get_replication_baseline": "02_gbe.ipynb",
-         "GBEProvider.decode_gbe_string": "02_gbe.ipynb",
-         "GBEProvider.decode_gbe_strings": "02_gbe.ipynb"}
+         "GBEProvider": "02_gbe.data_provider.ipynb",
+         "GBEProvider.get_gbe_from_movisense": "02_gbe.data_provider.ipynb",
+         "GBEProvider.define_initial_dataset": "02_gbe.data_provider.ipynb",
+         "GBEProvider.define_baseline_sessions": "02_gbe.data_provider.ipynb",
+         "GBEProvider.find_gbe_game_starting_time": "02_gbe.data_provider.ipynb",
+         "GBEProvider.check_time_between_sessions": "02_gbe.data_provider.ipynb",
+         "GBEProvider.get_gbe_data": "02_gbe.data_provider.ipynb",
+         "GBEProvider.get_initial_baseline": "02_gbe.data_provider.ipynb",
+         "GBEProvider.get_replication_baseline": "02_gbe.data_provider.ipynb",
+         "GBEProvider.decode_gbe_string": "02_gbe.data_provider.ipynb",
+         "GBEProvider.decode_gbe_strings": "02_gbe.data_provider.ipynb",
+         "WMDataProvider": "03_gbe.wm.data_provider.ipynb",
+         "WMDataProvider.decode_wm_strings": "03_gbe.wm.data_provider.ipynb",
+         "WMDataProvider.get_wm_trial_types": "03_gbe.wm.data_provider.ipynb",
+         "WMDataProvider.add_trial_types": "03_gbe.wm.data_provider.ipynb",
+         "WMDataProvider.get_wm_data": "03_gbe.wm.data_provider.ipynb",
+         "WMDataProvider.filter_old_app_sessions": "03_gbe.wm.data_provider.ipynb",
+         "WMDataProvider.filter_level_two_failures": "03_gbe.wm.data_provider.ipynb"}
 
 modules = ["data_provider.py",
-           "gbe.py"]
+           "gbe/data_provider.py",
+           "gbe/wm/data_provider.py"]
 
 doc_url = "https://hgzech.github.io/trr265/"
 
