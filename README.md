@@ -6,6 +6,8 @@
 
 `pip install trr265`
 
+`pip install biuR` (optional but needed for most analyses)
+
 ## How to use
 
 ```python
