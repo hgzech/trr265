@@ -10,17 +10,17 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Core
-      url: core.html
-    - output: web,pdf
       title: Data Provider
       url: data_provider.html
     - output: web,pdf
       title: GBE
-      url: gbe.html
+      url: gbe.data_provider.html
     - output: web,pdf
-      title: Information Sampling Task
-      url: IST.html
+      title: Working memory task
+      url: gbe.wm.data_provider.html
+    - output: web,pdf
+      title: Working memory task - Scoring
+      url: gbe.wm.scoring.html
     output: web
     title: trr265
   output: web

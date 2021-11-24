@@ -79,7 +79,6 @@ def get_wm_trial_types(self:WMDataProvider):
                                '3':'no_distractor_2'}, inplace = True)
     return type_df
 
-
 # Cell
 @patch
 def add_trial_types(self:WMDataProvider, df):

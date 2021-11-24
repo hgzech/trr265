@@ -1,9 +1,9 @@
 {
   "trr265": {
     "Overview": "/",
-    "Core": "core.html",
     "Data Provider": "data_provider.html",
-    "GBE": "gbe.html",
-    "Information Sampling Task": "IST.html"
+    "GBE": "gbe.data_provider.html",
+    "Working memory task": "gbe.wm.data_provider.html",
+    "Working memory task - Scoring": "gbe.wm.scoring.html"
   }
 }

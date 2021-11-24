@@ -39,7 +39,8 @@ index = {"DataProvider": "01_data_provider.ipynb",
 
 modules = ["data_provider.py",
            "gbe/data_provider.py",
-           "gbe/wm/data_provider.py"]
+           "gbe/wm/data_provider.py",
+           "gbe/wm/scoring.py"]
 
 doc_url = "https://hgzech.github.io/trr265/"
 
