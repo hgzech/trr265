@@ -1,15 +1,39 @@
-def add_implied_data(df):
-    df['duplication'] = df.groupby(['participant','session_number','trial_type','level']).cumcount()
-    _df = df.set_index(['participant','session_number','trial_type','level','duplication']).sort_index()[['success']]#.loc[('b001','Session 1')]
-    levels = list(range(3,11))
-    ## THIS LINE INTRODUCES NON EXISTING SESSIONS
-    new_index = pd.MultiIndex.from_product([_df.reset_index().participant.unique(), _df.reset_index().session_number.unique(),_df.reset_index().trial_type.unique(), levels, [0,1]],names = ['participant','session_number','trial_type','level','duplication'])
-    _df = _df.reindex(new_index)
-    _df['implied_success'] = _df.groupby(level=['participant','session_number','trial_type','level']).transform(np.max).fillna(0)
-    _df['implied_success'] = _df.success.fillna(_df.implied_success)
-    _df = _df.reset_index()
-    _df['implied_success'] = _df.implied_success# * _df.level
-    _df = _df.merge(df.groupby(['participant','session_number']).gbe_index.first().reset_index(), on = ['participant','session_number'], how = 'outer' )
-    _df = _df[_df.gbe_index.isnull()==False]
-    implied_success = _df.groupby(['gbe_index']).implied_success.mean()
-    return _df, implied_success
+plot_df = pd.DataFrame({})
+icc = "ICC2"#'ICC1k'
+plot_df.loc['mean_no-distractor-1','sb'] =               iccs_mean_no_distractor_1['iccs'][0].query('type=="%s"'%icc)['ICC'].iloc[0]
+plot_df.loc['mean_no-distractor-2','sb'] =               iccs_mean_no_distractor_2['iccs'][0].query('type=="%s"'%icc)['ICC'].iloc[0]
+plot_df.loc['mean_encoding-distractor','sb'] =           iccs_mean_encoding_distractor['iccs'][0].query('type=="%s"'%icc)['ICC'].iloc[0]
+plot_df.loc['mean_delayed-distractor','sb'] =            iccs_mean_delayed_distractor['iccs'][0].query('type=="%s"'%icc)['ICC'].iloc[0]
+
+plot_df.loc['trial_sep_no-distractor-1','sb'] =               iccs_perc_predicted_sep_no_distractor_1['iccs'][0].query('type=="%s"'%icc)['ICC'].iloc[0]
+plot_df.loc['trial_sep_no-distractor-2','sb'] =               iccs_perc_predicted_sep_no_distractor_2['iccs'][0].query('type=="%s"'%icc)['ICC'].iloc[0]
+plot_df.loc['trial_sep_encoding-distractor','sb'] =           perc_predicted_sep_encoding_distractor['iccs'][0].query('type=="%s"'%icc)['ICC'].iloc[0]
+plot_df.loc['trial_sep_delayed-distractor','sb'] =            perc_predicted_sep_delayed_distractor['iccs'][0].query('type=="%s"'%icc)['ICC'].iloc[0]
+plot_df.loc['trial_joint_no-distractor-1','sb'] =               iccs_perc_predicted_sep_trial_no_distractor_1['iccs'][0].query('type=="%s"'%icc)['ICC'].iloc[0]
+plot_df.loc['trial_joint_no-distractor-2','sb'] =               iccs_perc_predicted_sep_trial_no_distractor_2['iccs'][0].query('type=="%s"'%icc)['ICC'].iloc[0]
+plot_df.loc['trial_joint_encoding-distractor','sb'] =           perc_predicted_sep_trial_encoding_distractor['iccs'][0].query('type=="%s"'%icc)['ICC'].iloc[0]
+plot_df.loc['trial_joint_delayed-distractor','sb'] =            perc_predicted_sep_trial_delayed_distractor['iccs'][0].query('type=="%s"'%icc)['ICC'].iloc[0]
+plot_df.loc['model_calc_no-distractor-1','sb'] =   iccs_perc_predicted_sep_trial_mod_no_distractor_1['icc']
+#plot_df.loc['model_calc_loss','sb'] =  model_calculated_iccs['perc_gamble_trial_joint_loss']['icc']
+#plot_df.loc['model_calc_mixed','sb'] = model_calculated_iccs['perc_gamble_trial_joint_mixed']['icc']
+
+plot_df = plot_df.reset_index()
+plot_df.rename(columns = {'index':'category','sb':"Test-retest reliability (%s)"%icc}, inplace = True)
+plot_df['trial_type'] = plot_df.category.apply(lambda x: x.split('_')[-1])
+plot_df['Method'] = plot_df.category.apply(lambda x: '_'.join(x.split('_')[:-1]))
+plot_df.Method.replace({'mean':'Mean',
+                  'trial_sep':'Trial-based (sessions modeled separate)',
+                  'trial_joint':'Trial-based (sessions modeled jointly)',
+                  'model_calc':'Trial-based (model calculated)'
+                  }, inplace = True)
+
+g = sns.catplot(x = "trial_type",       # x variable name
+            y = "Test-retest reliability (%s)"%icc,       # y variable name
+            hue = "Method",  # group variable name
+            data = plot_df,     # dataframe to plot
+            kind = "bar",
+           ci = None,
+            height=6, aspect=1.3)
+g.set(ylim=(0, 1))
+ax = g.axes[0][0]
+#ax.axhline(.8, color = 'black')

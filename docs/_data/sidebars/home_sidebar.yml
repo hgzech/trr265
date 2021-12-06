@@ -21,6 +21,9 @@ entries:
     - output: web,pdf
       title: Working memory task - Scoring
       url: gbe.wm.scoring.html
+    - output: web,pdf
+      title: Stats
+      url: stats.html
     output: web
     title: trr265
   output: web

@@ -35,12 +35,30 @@ index = {"DataProvider": "01_data_provider.ipynb",
          "WMDataProvider.add_trial_types": "03_gbe.wm.data_provider.ipynb",
          "WMDataProvider.get_wm_data": "03_gbe.wm.data_provider.ipynb",
          "WMDataProvider.filter_old_app_sessions": "03_gbe.wm.data_provider.ipynb",
-         "WMDataProvider.filter_level_two_failures": "03_gbe.wm.data_provider.ipynb"}
+         "WMDataProvider.filter_level_two_failures": "03_gbe.wm.data_provider.ipynb",
+         "get_max_levels": "04_gbe.wm.scoring.ipynb",
+         "get_perc_correct": "04_gbe.wm.scoring.ipynb",
+         "add_implied_data": "04_gbe.wm.scoring.ipynb",
+         "get_implied_perc_correct": "04_gbe.wm.scoring.ipynb",
+         "get_perc_correct_predicted_sep_r": "04_gbe.wm.scoring.ipynb",
+         "get_perc_correct_predicted_sep": "04_gbe.wm.scoring.ipynb",
+         "get_perc_correct_predicted_sep_trial_r": "04_gbe.wm.scoring.ipynb",
+         "get_perc_correct_predicted_sep_trial": "04_gbe.wm.scoring.ipynb",
+         "get_perc_correct_predicted_joint_r": "04_gbe.wm.scoring.ipynb",
+         "fix_r_frame": "04_gbe.wm.scoring.ipynb",
+         "get_perc_correct_predicted_joint": "04_gbe.wm.scoring.ipynb",
+         "icc_description_dict": "05_stats.ipynb",
+         "describe_iccs": "05_stats.ipynb",
+         "retest_plot": "05_stats.ipynb",
+         "jitter": "05_stats.ipynb",
+         "analyze_reliability": "05_stats.ipynb",
+         "get_psych_iccs": "05_stats.ipynb"}
 
 modules = ["data_provider.py",
            "gbe/data_provider.py",
            "gbe/wm/data_provider.py",
-           "gbe/wm/scoring.py"]
+           "gbe/wm/scoring.py",
+           "stats.py"]
 
 doc_url = "https://hgzech.github.io/trr265/"
 
