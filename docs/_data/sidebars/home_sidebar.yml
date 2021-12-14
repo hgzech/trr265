@@ -24,6 +24,9 @@ entries:
     - output: web,pdf
       title: Stats
       url: stats.html
+    - output: web,pdf
+      title: Title
+      url: Untitled.html
     output: web
     title: trr265
   output: web

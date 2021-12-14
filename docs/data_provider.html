@@ -624,6 +624,8 @@ If the output from the function has been stored already, it loads the stored fil
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Preparing ba_data
+Values with wrong dtype in screen_aud_nogroup
+Values with wrong dtype in screen_aud_sum
 </pre>
 </div>
 </div>
@@ -1000,7 +1002,7 @@ If the output from the function has been stored already, it loads the stored fil
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_duplicate_mov_ids" class="doc_header"><code>DataProvider.get_duplicate_mov_ids</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L299" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_duplicate_mov_ids</code>()</p>
+<h4 id="DataProvider.get_duplicate_mov_ids" class="doc_header"><code>DataProvider.get_duplicate_mov_ids</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L301" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_duplicate_mov_ids</code>()</p>
 </blockquote>
 <p>This function creates a dictionary mapping old to new movisens IDs.</p>
 
@@ -1049,7 +1051,7 @@ If the output from the function has been stored already, it loads the stored fil
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_mov_data" class="doc_header"><code>DataProvider.get_mov_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L315" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_mov_data</code>()</p>
+<h4 id="DataProvider.get_mov_data" class="doc_header"><code>DataProvider.get_mov_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L317" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_mov_data</code>()</p>
 </blockquote>
 <p>This function gets Movisense data
 1) We create unique participnat IDs (e.g. "b001"; this is necessary as sites use overapping IDs)
@@ -1334,7 +1336,7 @@ Participants: b186, d092, m158 have no associated redcap IDs and are excluded fr
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_alcohol_per_drink" class="doc_header"><code>DataProvider.get_alcohol_per_drink</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L390" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_alcohol_per_drink</code>()</p>
+<h4 id="DataProvider.get_alcohol_per_drink" class="doc_header"><code>DataProvider.get_alcohol_per_drink</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L392" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_alcohol_per_drink</code>()</p>
 </blockquote>
 
 </div>
@@ -1602,7 +1604,7 @@ Participants: b186, d092, m158 have no associated redcap IDs and are excluded fr
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_two_day_data" class="doc_header"><code>DataProvider.get_two_day_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L398" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_two_day_data</code>()</p>
+<h4 id="DataProvider.get_two_day_data" class="doc_header"><code>DataProvider.get_two_day_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L400" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_two_day_data</code>()</p>
 </blockquote>
 <p>Gets two-day which are a subset of mov_data
 1) We select two-day forms and turn the dataframe into one row per participant-date (Form repetitions on the same day are removed)
