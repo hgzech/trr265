@@ -119,7 +119,7 @@ def determine_phone_b07(self:DataProvider, df):
     dd_screeners = clean_screeners(dd_screeners)
 
     b07_screeners = ['ann-kathrin stock','charlotte blum','josephine kirschgens','klara macht','borchardt','marta ledro','miriam petasch','mona hofmann','theo tester']
-    s01_screeners = ['esther preuschhof', 'miriam schmitz', 'sebastian möricke', 'jessica zimmermann', 'leonard visser', 'anna-lena lünert', 'anne dörfler', 'dominic reichert', 'maike borchardt', 'dorothee scheuermann', 'paula böhlmann', 'alice','josephine kirschgens maxi stiller', 'maria schießl', '22.10.2021', 'sascha', '03.08.2021', 'mariana plumbohm', 'caroline neumer', '04.08.2021', 'maxi stiller', 'sacsha', '09.08.2021', 'ml', 'charlotte', 'charlotte heinze']
+    s01_screeners = ['esther preuschhof', 'miriam schmitz', 'sebastian möricke', 'jessica zimmermann', 'leonard visser', 'anna-lena lünert', 'anne dörfler', 'dominic reichert', 'maike borchardt', 'dorothee scheuermann', 'paula böhlmann', 'alice','josephine kirschgens maxi stiller', 'maria schießl', '22.10.2021', 'sascha', '03.08.2021', 'mariana plumbohm', 'caroline neumer', '04.08.2021', 'maxi stiller', 'sacsha', '09.08.2021', 'ml', 'charlotte', 'charlotte heinze', 'shereen', 'test', "charlotte heinze", 'benedikt']
     known_dd_screeners = list(b07_screeners+s01_screeners)
     dd_screeners = df[(df.center=='d')&(df.screen_caller.isna()==False)].screen_caller.unique()
     # Checking if all Dresden phone screeners are accounted for
@@ -220,7 +220,7 @@ def get_phone_data(self:DataProvider):
        'test002', 'test003', 'test004', 'test005', 'test01', 'test02',
        'test03', 'test0722', 'test1', 'test34', 'test999', 'test2020',
        'test20201', 'test345345', 'testt', 'test_10', 'test_11_26',
-       'test_neu', 'xx956','050262', '050335', '050402', '050416', '051005', '294932', '891752080', '898922719', '898922899', '917702419', '01627712983', 'meow', 'test0022', 'test246', 'test5647', 'test22222', 'test41514', 'testtt', 'test_057', 'tets']
+       'test_neu', 'xx956','050262', '050335', '050402', '050416', '051005', '294932', '891752080', '898922719', '898922899', '917702419', '01627712983', 'meow', 'test0022', 'test246', 'test5647', 'test22222', 'test41514', 'testtt', 'test_057', 'tets','898923271', 'test001', 'test006', 'test007', 'test008', 'test11', 'test_23_12', 'test_n']
     df = df[~df.participant_id.astype(str).isin(remove)]
 
     bad_ids = df[~df.participant_id.apply(self.check_participant_id)].participant_id.unique()
@@ -277,7 +277,7 @@ def get_ba_data(self:DataProvider):
         df[new_id].fillna('nan',inplace = True)
         df.loc[df[new_id].str.contains('nan'),new_id] = np.nan
     # Removing test participants
-    remove = ['050744', 'hdfghadgfh', 'LindaEngel', 'test', 'Test001', 'Test001a', 'test0011', 'test0012', 'test0013', 'test0014', 'test0015', 'test002', 'test00229', 'test007', 'test01', 'test012', 'test013', 'test1', 'test2', 'test4', 'test12', 'test999', 'test2021', 'test345345', 'testneu', 'testtest', 'test_0720', 'test_10', 'test_GA', 'Test_JH','test0016','891752080', 'pipingTest', 'test0001', 'test00012', 'test0012a', 'test0015a', 'test0017', 'test10', 'test20212', 'testJohn01', 'test_00213', 'test_00233', 'test_00271', 'test_003', 'test_004', 'test_11_26', 'Test_MS','898922899', 'tesst', 'test0002', 'test0908', 'test092384750398475', 'test43', 'test123', 'test1233', 'test3425', 'test123456', 'test1234567', 'testfu3', 'test_888', 'test_999', 'test_98375983745', 'Test_Übung','050335', 'test003', 'test02', 'test111', 'test1111', 'test1234']
+    remove = ['050744', 'hdfghadgfh', 'LindaEngel', 'test', 'Test001', 'Test001a', 'test0011', 'test0012', 'test0013', 'test0014', 'test0015', 'test002', 'test00229', 'test007', 'test01', 'test012', 'test013', 'test1', 'test2', 'test4', 'test12', 'test999', 'test2021', 'test345345', 'testneu', 'testtest', 'test_0720', 'test_10', 'test_GA', 'Test_JH','test0016','891752080', 'pipingTest', 'test0001', 'test00012', 'test0012a', 'test0015a', 'test0017', 'test10', 'test20212', 'testJohn01', 'test_00213', 'test_00233', 'test_00271', 'test_003', 'test_004', 'test_11_26', 'Test_MS','898922899', 'tesst', 'test0002', 'test0908', 'test092384750398475', 'test43', 'test123', 'test1233', 'test3425', 'test123456', 'test1234567', 'testfu3', 'test_888', 'test_999', 'test_98375983745', 'Test_Übung','050335', 'test003', 'test02', 'test111', 'test1111', 'test1234','test0000', 'test_CH']
     df = df[~df.participant_id.astype(str).isin(remove)]
     # Checking participant ids (to find new test participants)
     bad_ids = df[~df.participant_id.apply(self.check_participant_id)].participant_id.unique()
@@ -296,6 +296,21 @@ def get_ba_data(self:DataProvider):
     df['is_female'] = df['is_female'].astype(float)
 
     return df
+
+# Cell
+@patch
+def get_baseline_drinking_data(self:DataProvider):
+    # Getting relevant data
+    ba = self.get_ba_data(columns = ['participant_id','redcap_event_name','mov_id','bx_qf_alc_01','bx_qf_alc_02','bx_qf1_sum']).query("redcap_event_name=='erhebungszeitpunkt_arm_1'")
+    # Correct one variable for one participant.  This participant reported drinking per three months but the data as logged as drinking per week
+    ba.loc[(ba.participant_id=='11303') & (ba.bx_qf_alc_02==2),'bx_qf_alc_02'] = 1
+    ba['drinking_days_last_three_month'] = ba['bx_qf_alc_01'].astype(float) * ba['bx_qf_alc_02'].replace({2:12})
+    ba['drinks_per_drinking_day_last_three_month'] = ba['bx_qf1_sum']
+    ba['drinks_per_day_last_three_month'] = (ba['drinking_days_last_three_month'] * ba['bx_qf1_sum'])/90
+    standard_last_three = ba[~ba.drinks_per_day_last_three_month.isnull()][['mov_id','drinks_per_day_last_three_month','drinks_per_drinking_day_last_three_month','drinking_days_last_three_month']]
+    standard_last_three.columns = ['participant','last_three_month','drinks_per_drinking_day_last_three_month','drinking_days_last_three_month']
+    standard_last_three = standard_last_three.groupby('participant').first()
+    return standard_last_three
 
 # Cell
 @patch

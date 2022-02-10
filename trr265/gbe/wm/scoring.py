@@ -111,19 +111,6 @@ def get_perc_correct_predicted_sep(df):
     return perc_predicted_sep
 
 # Cell
-#def get_perc_correct_predicted_sep_trial_r(df):
-#    %R -i df
-#    %R library(lmerTest)
-#    %R library(ggeffects)
-#    # Running the model
-#    %R control=glmerControl(optimizer = "bobyqa", optCtrl=list(maxfun=1e6))
-#    %R m = glmer(implied_success ~ 1 + (1 | participant/session), data=df, family=binomial, control = control, na.action = na.exclude)
-#    # Extracting predicted values
-#    %R p = ggpredict(m, terms=c("participant","session"), type="re",ci.lvl = NA)
-#    %R -o p
-#    return p
-
-#export
 def get_perc_correct_predicted_sep_trial_r(df):
     R = biuR.wrapper.R()
     p = R("""
@@ -153,7 +140,7 @@ def get_perc_correct_predicted_sep_trial(df):
         # Labeling variables
         predicted.columns = ['participant','perc_predicted_sep_trial_%s'%trial_type,'session']
         #predicted['session'] = session
-        predicted['gbe_index'] = predicted.participant.astype(str) + predicted.session.apply(lambda x: '_%03d'%int(x)).astype(str)
+        predicted['gbe_index'] = predicted.participant.astype(str) + predicted.session.apply(lambda x: '_%03d'%int(float(x))).astype(str)
         predicted = predicted.set_index('gbe_index')['perc_predicted_sep_trial_%s'%trial_type].to_frame()
     # Combining everything into one dataframe
         dfs.append(predicted)

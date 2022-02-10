@@ -264,24 +264,10 @@ If the output from the function has been stored already, it loads the stored fil
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="s1">&#39;participant_id&#39;</span> <span class="ow">in</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_phone_codebook</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">variable</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s2">&quot;Failed to load phone_codebook.html&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="s1">&#39;participant_id&#39;</span> <span class="ow">in</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_phone_codebook</span><span class="p">()</span><span class="o">.</span><span class="n">variable</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="s2">&quot;Failed to load phone_codebook.html&quot;</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Preparing phone_codebook
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -531,24 +517,10 @@ If the output from the function has been stored already, it loads the stored fil
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="s1">&#39;variable&#39;</span> <span class="ow">in</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_ba_codebook</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">),</span> <span class="s2">&quot;Codebook did not load correctly&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="s1">&#39;variable&#39;</span> <span class="ow">in</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_ba_codebook</span><span class="p">(),</span> <span class="s2">&quot;Codebook did not load correctly&quot;</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Preparing ba_codebook
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -609,27 +581,11 @@ If the output from the function has been stored already, it loads the stored fil
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">check_ba</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_ba_data</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[[</span><span class="s1">&#39;participant_id&#39;</span><span class="p">,</span><span class="s1">&#39;redcap_event_name&#39;</span><span class="p">,</span><span class="s1">&#39;redcap_repeat_instrument&#39;</span><span class="p">,</span><span class="s1">&#39;redcap_repeat_instance&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">check_ba</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_ba_data</span><span class="p">()[[</span><span class="s1">&#39;participant_id&#39;</span><span class="p">,</span><span class="s1">&#39;redcap_event_name&#39;</span><span class="p">,</span><span class="s1">&#39;redcap_repeat_instrument&#39;</span><span class="p">,</span><span class="s1">&#39;redcap_repeat_instance&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span>
 <span class="k">assert</span> <span class="n">check_ba</span><span class="p">,</span> <span class="s2">&quot;Redcap BA data was not properly formatted&quot;</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Preparing ba_data
-Values with wrong dtype in screen_aud_nogroup
-Values with wrong dtype in screen_aud_sum
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -643,7 +599,7 @@ Values with wrong dtype in screen_aud_sum
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dp</span><span class="o">.</span><span class="n">get_ba_data</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dp</span><span class="o">.</span><span class="n">get_ba_data</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -652,14 +608,6 @@ Values with wrong dtype in screen_aud_sum
 
 <div class="output_wrapper">
 <div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Preparing ba_data
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
@@ -709,38 +657,62 @@ Values with wrong dtype in screen_aud_sum
   <tbody>
     <tr>
       <th>0</th>
-      <td>67</td>
+      <td>53</td>
       <td>erhebungszeitpunkt_arm_1</td>
+      <td>None</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>0.0</td>
       <td>10101.0</td>
-      <td>2020-06-25</td>
+      <td>2021-10-20</td>
       <td>NaN</td>
       <td>...</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>d</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>b</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
       <td>False</td>
-      <td>1.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>67</td>
+      <td>53</td>
+      <td>mrterhebung_1_arm_1</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>b</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>False</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>53</td>
       <td>erhebungszeitpunkt_arm_1</td>
       <td>at_home_qsu</td>
       <td>1.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>NaT</td>
       <td>NaN</td>
       <td>...</td>
@@ -748,23 +720,47 @@ Values with wrong dtype in screen_aud_sum
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>d</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>b</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
       <td>False</td>
-      <td>1.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>67</td>
+      <th>3</th>
+      <td>53</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>at_home_ftnd</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>None</td>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>b</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>False</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>53</td>
       <td>erhebungszeitpunkt_arm_1</td>
       <td>at_home_bis15</td>
       <td>1.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>NaT</td>
       <td>NaN</td>
       <td>...</td>
@@ -772,60 +768,12 @@ Values with wrong dtype in screen_aud_sum
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>d</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>b</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
       <td>False</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>67</td>
-      <td>erhebungszeitpunkt_arm_1</td>
-      <td>at_home_cerq</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaT</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>d</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>67</td>
-      <td>erhebungszeitpunkt_arm_1</td>
-      <td>at_home_ad</td>
-      <td>1.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaT</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>d</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
-      <td>1.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>...</th>
@@ -852,16 +800,16 @@ Values with wrong dtype in screen_aud_sum
       <td>...</td>
     </tr>
     <tr>
-      <th>6748</th>
-      <td>11631</td>
+      <th>15010</th>
+      <td>12205</td>
       <td>erhebungszeitpunkt_arm_1</td>
-      <td>at_home_oslo</td>
-      <td>1.0</td>
+      <td>None</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaT</td>
+      <td>0.0</td>
+      <td>10101.0</td>
+      <td>2022-01-17</td>
       <td>NaN</td>
       <td>...</td>
       <td>NaN</td>
@@ -869,22 +817,22 @@ Values with wrong dtype in screen_aud_sum
       <td>NaN</td>
       <td>NaN</td>
       <td>m</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>m282</td>
+      <td>None</td>
+      <td>None</td>
       <td>False</td>
-      <td>0.0</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>6749</th>
-      <td>11631</td>
-      <td>erhebungszeitpunkt_arm_1</td>
-      <td>at_home_pss10</td>
-      <td>1.0</td>
+      <th>15011</th>
+      <td>12205</td>
+      <td>mrterhebung_1_arm_1</td>
+      <td>None</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>None</td>
       <td>NaT</td>
       <td>NaN</td>
       <td>...</td>
@@ -893,22 +841,22 @@ Values with wrong dtype in screen_aud_sum
       <td>NaN</td>
       <td>NaN</td>
       <td>m</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>m282</td>
+      <td>None</td>
+      <td>None</td>
       <td>False</td>
-      <td>0.0</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>6750</th>
-      <td>11631</td>
-      <td>erhebungszeitpunkt_arm_1</td>
-      <td>at_home_ucla</td>
+      <th>15012</th>
+      <td>12205</td>
+      <td>mrterhebung_1_arm_1</td>
+      <td>neuerfb</td>
       <td>1.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>NaT</td>
       <td>NaN</td>
       <td>...</td>
@@ -917,22 +865,22 @@ Values with wrong dtype in screen_aud_sum
       <td>NaN</td>
       <td>NaN</td>
       <td>m</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>m282</td>
+      <td>None</td>
+      <td>None</td>
       <td>False</td>
-      <td>0.0</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>6751</th>
-      <td>11631</td>
-      <td>erhebungszeitpunkt_arm_1</td>
-      <td>at_home_pain</td>
+      <th>15013</th>
+      <td>12205</td>
+      <td>mrterhebung_1_arm_1</td>
+      <td>clinic_participant_panas</td>
       <td>1.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>NaT</td>
       <td>NaN</td>
       <td>...</td>
@@ -941,22 +889,22 @@ Values with wrong dtype in screen_aud_sum
       <td>NaN</td>
       <td>NaN</td>
       <td>m</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>m282</td>
+      <td>None</td>
+      <td>None</td>
       <td>False</td>
-      <td>0.0</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>6752</th>
-      <td>11631</td>
-      <td>erhebungszeitpunkt_arm_1</td>
-      <td>at_home_sleep</td>
+      <th>15014</th>
+      <td>12205</td>
+      <td>mrterhebung_1_arm_1</td>
+      <td>clinic_examiner_mrt_examination</td>
       <td>1.0</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>NaT</td>
       <td>NaN</td>
       <td>...</td>
@@ -965,15 +913,400 @@ Values with wrong dtype in screen_aud_sum
       <td>NaN</td>
       <td>NaN</td>
       <td>m</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>m282</td>
+      <td>None</td>
+      <td>None</td>
       <td>False</td>
-      <td>0.0</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>6753 rows × 3401 columns</p>
+<p>15015 rows × 3918 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Getting-standard-drinks-per-day-in-last-three-months-before-baseline">Getting standard drinks per day in last three months before baseline<a class="anchor-link" href="#Getting-standard-drinks-per-day-in-last-three-months-before-baseline"> </a></h3><p>Used variables:</p>
+<ul>
+<li>An wie vielen Tagen tranken Sie in den letzten 3 Monaten zumindest 1 Glas Alkohol? (bx_qf_alc_01)</li>
+<li>Welches Format hatte die Angabe der Tage in der vorhergehenden Frage? (bx_qf_alc_02)<ul>
+<li>Angabe in den letzten 3 Monaten. (1)</li>
+<li>Angabe pro Woche innerhalb der letzten 3 Monat. (2)</li>
+</ul>
+</li>
+<li>An diesen Tagen an denen Sie in den letzten 3 Monaten Alkohol tranken: Können Sie mir anhand der Abbildungen auf der Liste angeben, was und wie viel Sie üblicherweise an einem Tag tranken?" (bx_qf1_sum)</li>
+</ul>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ba</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_ba_data</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;participant_id&#39;</span><span class="p">,</span><span class="s1">&#39;redcap_event_name&#39;</span><span class="p">,</span><span class="s1">&#39;mov_id&#39;</span><span class="p">,</span><span class="s1">&#39;bx_qf_alc_01&#39;</span><span class="p">,</span><span class="s1">&#39;bx_qf_alc_02&#39;</span><span class="p">,</span><span class="s1">&#39;bx_qf1_sum&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;redcap_event_name==&#39;erhebungszeitpunkt_arm_1&#39;&quot;</span><span class="p">)</span>
+<span class="n">ba</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">ba</span><span class="o">.</span><span class="n">participant_id</span><span class="o">==</span><span class="s1">&#39;11303&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ba</span><span class="o">.</span><span class="n">bx_qf_alc_02</span><span class="o">==</span><span class="mi">2</span><span class="p">),</span><span class="s1">&#39;bx_qf_alc_02&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">ba</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">ba</span><span class="o">.</span><span class="n">participant_id</span><span class="o">==</span><span class="s1">&#39;11303&#39;</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>participant_id</th>
+      <th>redcap_event_name</th>
+      <th>mov_id</th>
+      <th>bx_qf_alc_01</th>
+      <th>bx_qf_alc_02</th>
+      <th>bx_qf1_sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11367</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>24.0</td>
+      <td>1.0</td>
+      <td>3.2</td>
+    </tr>
+    <tr>
+      <th>11373</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11374</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11375</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11376</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11377</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11378</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11379</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11380</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11381</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11382</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11383</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11384</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11385</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11386</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11387</th>
+      <td>11303</td>
+      <td>erhebungszeitpunkt_arm_1</td>
+      <td>m190</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="DataProvider.get_baseline_drinking_data" class="doc_header"><code>DataProvider.get_baseline_drinking_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L301" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_baseline_drinking_data</code>()</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dp</span><span class="o">.</span><span class="n">get_baseline_drinking_data</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>last_three_month</th>
+      <th>drinks_per_drinking_day_last_three_month</th>
+      <th>drinking_days_last_three_month</th>
+    </tr>
+    <tr>
+      <th>participant</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>b000</th>
+      <td>5.666667</td>
+      <td>8.50</td>
+      <td>60.0</td>
+    </tr>
+    <tr>
+      <th>b001</th>
+      <td>0.800000</td>
+      <td>2.00</td>
+      <td>36.0</td>
+    </tr>
+    <tr>
+      <th>b002</th>
+      <td>1.860000</td>
+      <td>4.65</td>
+      <td>36.0</td>
+    </tr>
+    <tr>
+      <th>b012</th>
+      <td>2.880000</td>
+      <td>5.40</td>
+      <td>48.0</td>
+    </tr>
+    <tr>
+      <th>b013</th>
+      <td>6.300000</td>
+      <td>6.75</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>m278</th>
+      <td>1.653333</td>
+      <td>6.20</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>m279</th>
+      <td>1.906667</td>
+      <td>7.15</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>m280</th>
+      <td>1.240000</td>
+      <td>3.10</td>
+      <td>36.0</td>
+    </tr>
+    <tr>
+      <th>m281</th>
+      <td>4.533333</td>
+      <td>8.50</td>
+      <td>48.0</td>
+    </tr>
+    <tr>
+      <th>m282</th>
+      <td>2.200000</td>
+      <td>5.50</td>
+      <td>36.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>501 rows × 3 columns</p>
 </div>
 </div>
 
@@ -1002,7 +1335,7 @@ Values with wrong dtype in screen_aud_sum
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_duplicate_mov_ids" class="doc_header"><code>DataProvider.get_duplicate_mov_ids</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L301" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_duplicate_mov_ids</code>()</p>
+<h4 id="DataProvider.get_duplicate_mov_ids" class="doc_header"><code>DataProvider.get_duplicate_mov_ids</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L316" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_duplicate_mov_ids</code>()</p>
 </blockquote>
 <p>This function creates a dictionary mapping old to new movisens IDs.</p>
 
@@ -1051,7 +1384,7 @@ Values with wrong dtype in screen_aud_sum
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_mov_data" class="doc_header"><code>DataProvider.get_mov_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L317" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_mov_data</code>()</p>
+<h4 id="DataProvider.get_mov_data" class="doc_header"><code>DataProvider.get_mov_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L332" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_mov_data</code>()</p>
 </blockquote>
 <p>This function gets Movisense data
 1) We create unique participnat IDs (e.g. "b001"; this is necessary as sites use overapping IDs)
@@ -1091,7 +1424,7 @@ Values with wrong dtype in screen_aud_sum
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_mov_data</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_mov_data</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -1336,7 +1669,7 @@ Participants: b186, d092, m158 have no associated redcap IDs and are excluded fr
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_alcohol_per_drink" class="doc_header"><code>DataProvider.get_alcohol_per_drink</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L392" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_alcohol_per_drink</code>()</p>
+<h4 id="DataProvider.get_alcohol_per_drink" class="doc_header"><code>DataProvider.get_alcohol_per_drink</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L407" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_alcohol_per_drink</code>()</p>
 </blockquote>
 
 </div>
@@ -1604,7 +1937,7 @@ Participants: b186, d092, m158 have no associated redcap IDs and are excluded fr
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DataProvider.get_two_day_data" class="doc_header"><code>DataProvider.get_two_day_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L400" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_two_day_data</code>()</p>
+<h4 id="DataProvider.get_two_day_data" class="doc_header"><code>DataProvider.get_two_day_data</code><a href="https://github.com/hgzech/trr265/tree/master/trr265/data_provider.py#L415" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DataProvider.get_two_day_data</code>()</p>
 </blockquote>
 <p>Gets two-day which are a subset of mov_data
 1) We select two-day forms and turn the dataframe into one row per participant-date (Form repetitions on the same day are removed)
@@ -1636,7 +1969,7 @@ Participants: b186, d092, m158 have no associated redcap IDs and are excluded fr
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_two_day_data</span><span class="p">(</span><span class="n">update</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">get_two_day_data</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -1682,7 +2015,7 @@ Participants: b186, d092, m158 have no associated redcap IDs and are excluded fr
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Structure-of-two-day-data">Structure of two-day data<a class="anchor-link" href="#Structure-of-two-day-data"> </a></h4><p>{% include warning.html content='Note that sampling days run further than 365.  This should not be the case.' %}</p>
+<h4 id="Structure-of-two-day-data">Structure of two-day data<a class="anchor-link" href="#Structure-of-two-day-data"> </a></h4><p>{% include warning.html content='Note that sampling days run further than 365.  This should not be the case.  It turns out that for these participants the end date was manually set further than one year after the start date, on the movisens page.' %}</p>
 
 </div>
 </div>
