@@ -50,9 +50,6 @@ index = {"DataProvider": "01_data_provider.ipynb",
          "get_perc_correct_predicted_sep": "04_gbe.wm.scoring.ipynb",
          "get_perc_correct_predicted_sep_trial_r": "04_gbe.wm.scoring.ipynb",
          "get_perc_correct_predicted_sep_trial": "04_gbe.wm.scoring.ipynb",
-         "get_perc_correct_predicted_joint_r": "04_gbe.wm.scoring.ipynb",
-         "fix_r_frame": "04_gbe.wm.scoring.ipynb",
-         "get_perc_correct_predicted_joint": "04_gbe.wm.scoring.ipynb",
          "icc_description_dict": "05_stats.ipynb",
          "describe_iccs": "05_stats.ipynb",
          "retest_plot": "05_stats.ipynb",
@@ -117,10 +114,12 @@ modules = ["data_provider.py",
            "gbe/rtt/reliability.py",
            "gbe/sst/reliability.py",
            "gbe/ist/reliability.py",
-           "gbe/baseline_drinking/separate.py",
+           "gbe/baseline_drinking.py",
            "gbe/participants.py",
            "plotting.py",
-           "validation_task.py"]
+           "validation_task.py",
+           "gbe/rtt/singular_fit_inspection.py",
+           "gbe/baseline_drinking/separate.py"]
 
 doc_url = "https://hgzech.github.io/trr265/"
 

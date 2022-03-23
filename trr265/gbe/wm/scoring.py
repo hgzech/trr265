@@ -2,8 +2,7 @@
 
 __all__ = ['get_max_levels', 'get_perc_correct', 'add_implied_data', 'get_implied_perc_correct',
            'get_perc_correct_predicted_sep_r', 'get_perc_correct_predicted_sep',
-           'get_perc_correct_predicted_sep_trial_r', 'get_perc_correct_predicted_sep_trial',
-           'get_perc_correct_predicted_joint_r', 'fix_r_frame', 'get_perc_correct_predicted_joint']
+           'get_perc_correct_predicted_sep_trial_r', 'get_perc_correct_predicted_sep_trial']
 
 # Cell
 from .data_provider import WMDataProvider
@@ -149,57 +148,3 @@ def get_perc_correct_predicted_sep_trial(df):
     # Removing sessions that were not in initial dataframe
     perc_predicted_sep_trial = perc_predicted_sep_trial.loc[df.gbe_index.unique()]
     return perc_predicted_sep_trial, ms
-
-
-# Cell
-#def get_perc_correct_predicted_joint_r(df):
-#    %R -i df
-#    %R library(lmerTest)
-#    %R library(ggeffects)
-#    # Running the model
-#    %R control=glmerControl(optimizer = "bobyqa", optCtrl=list(maxfun=1e6))
-#    %R m = glmer(implied_success ~ 1 + trial_type + (1 + trial_type | participant/session), data=df, family=binomial, control = control, na.action = na.exclude)
-#    # Extracting predicted values
-#    %R p = ggpredict(m, terms=c("participant","session","trial_type"), type="re",ci.lvl = NA)
-#    %R p = as.data.frame(p)
-#    %R -o p
-#    return p
-
-
-def get_perc_correct_predicted_joint_r(df):
-    R = biuR.wrapper.R()
-    p = R("""
-    library(lmerTest)
-    library(ggeffects)
-    # Running the model
-    control=glmerControl(optimizer = "bobyqa", optCtrl=list(maxfun=1e6))
-    m = glmer(implied_success ~ 1 + trial_type + (1 + trial_type | participant/session), data=df, family=binomial, control = control, na.action = na.exclude)
-    # Extracting predicted values
-    p = ggpredict(m, terms=c("participant","session","trial_type"), type="re",ci.lvl = NA)
-    """,push=dict(df=df))
-    return p
-
-def fix_r_frame(df):
-    new_columns = []
-    new_column_names = [c[0] for c in df.columns]
-    for column in new_column_names:
-        new_columns.append([x[0] for x in df[column].values])
-    df = pd.DataFrame(new_columns).T
-    df.columns = new_column_names
-    return df
-
-
-def get_perc_correct_predicted_joint(df):
-    _df = add_implied_data(df)
-    _df['session'] = _df.session_number.astype(str) # making session a factor
-    _df = _df[['participant','session_number','session','trial_type','implied_success']]
-    predicted = get_perc_correct_predicted_joint_r(_df)
-    predicted.columns = [['participant','predicted_perc_correct_joint','session','trial_type']]
-    # Fixing R dtypes
-    predicted = fix_r_frame(predicted)
-    predicted['gbe_index'] = predicted.participant.astype(str) + predicted.session.apply(lambda x: '_%03d'%int(x)).astype(str)
-    predicted = predicted.set_index(['gbe_index','trial_type']).unstack()['predicted_perc_correct_joint']
-    predicted = predicted.add_prefix("perc_predicted_joint_")
-    # Removing sessions that were not in original dataframe
-    predicted = predicted.loc[df.gbe_index.unique()]
-    return predicted
