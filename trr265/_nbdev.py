@@ -84,8 +84,6 @@ index = {"DataProvider": "01_data_provider.ipynb",
          "get_ssrt_sep": "10_gbe.sst.scoring.ipynb",
          "get_ssrt_predicted_joint_r": "10_gbe.sst.scoring.ipynb",
          "get_ssrt_predicted_joint": "10_gbe.sst.scoring.ipynb",
-         "get_ssrt_predicted_joint_r_old": "10_gbe.sst.scoring.ipynb",
-         "get_ssrt_predicted_joint_old": "10_gbe.sst.scoring.ipynb",
          "get_percentage_gamble": "11_gbe.rtt.scoring.ipynb",
          "get_perc_gamble_predicted_sep_r": "11_gbe.rtt.scoring.ipynb",
          "get_perc_gamble_predicted_sep": "11_gbe.rtt.scoring.ipynb",
@@ -97,7 +95,8 @@ index = {"DataProvider": "01_data_provider.ipynb",
          "get_oversampling_predicted_joint_r": "12_gbe.ist.scoring.ipynb",
          "get_oversampling_predicted_joint": "12_gbe.ist.scoring.ipynb",
          "custom_params": "20_plotting.ipynb",
-         "icc_comparison_plot": "20_plotting.ipynb"}
+         "icc_comparison_plot": "20_plotting.ipynb",
+         "get_intense_drinking_data": "24_gbe.rtt.intense_sampling.ipynb"}
 
 modules = ["data_provider.py",
            "gbe/data_provider.py",
@@ -119,7 +118,9 @@ modules = ["data_provider.py",
            "plotting.py",
            "validation_task.py",
            "gbe/rtt/singular_fit_inspection.py",
-           "gbe/baseline_drinking/separate.py"]
+           "gbe/baseline_drinking/separate.py",
+           "gbe/intense_sampling.py",
+           "gbe/ema_drinking.py"]
 
 doc_url = "https://hgzech.github.io/trr265/"
 

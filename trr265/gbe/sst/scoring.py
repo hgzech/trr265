@@ -2,8 +2,7 @@
 
 __all__ = ['integration_methods_wrapper', 'verbruggen_quantile', 'integration_without_replacement',
            'get_integration_without_replacement_ssrts', 'mean_method_ssrt', 'get_mean_method_ssrts',
-           'get_ssrt_predicted_sep_r', 'get_ssrt_sep', 'get_ssrt_predicted_joint_r', 'get_ssrt_predicted_joint',
-           'get_ssrt_predicted_joint_r_old', 'get_ssrt_predicted_joint_old']
+           'get_ssrt_predicted_sep_r', 'get_ssrt_sep', 'get_ssrt_predicted_joint_r', 'get_ssrt_predicted_joint']
 
 # Cell
 from .data_provider import SSTDataProvider
@@ -117,37 +116,6 @@ def get_ssrt_predicted_joint(df):
     predicted['ssrt_predicted_joint'] = predicted[('predicted','0')] - predicted[('predicted','1')]
     predicted = predicted[('ssrt_predicted_joint','')].to_frame(name="ssrt_predicted_joint").reset_index()
     predicted['gbe_index'] = predicted.participant.astype(str) + predicted.session.apply(lambda x: '_%03d'%int(float(x))).astype(str)
-    predicted = predicted.set_index('gbe_index')['ssrt_predicted_joint'].to_frame()
-    # Removing sessions that were not in initial dataframe
-    predicted = predicted.loc[df.gbe_index.unique()]
-    return predicted, m
-
-# Cell
-def get_ssrt_predicted_joint_r_old(df):
-    R = biuR.wrapper.R()
-    p = R("""
-    library(lmerTest)
-    library(ggeffects)
-    # Running the model
-    control=lmerControl(optimizer = "bobyqa", optCtrl=list(maxfun=1e6))
-    m = lmer(ssd_rt ~ 1 + (1 + is_stop | participant / session), data=df, na.action = na.exclude)
-    # Extracting predicted values
-    ggpredict(m, terms=c("participant", "is_stop", "session"), type="re",ci.lvl = NA)
-    """,push=dict(df=df))
-
-    m = R("""m""")
-    return p, m
-
-def get_ssrt_predicted_joint_old(df):
-    df['ssd_rt'] = (df['ssd']).fillna((df.query("is_stop==0").rt))
-    df['session'] = df.session_number.astype(str) # making session a factor
-    # Predicting scores
-    predicted, m = get_ssrt_predicted_joint_r_old(df)
-    predicted.columns = ['participant','predicted','is_stop','session']
-    predicted = predicted.set_index(['participant','session','is_stop']).unstack()
-    predicted['ssrt_predicted_joint'] = predicted[('predicted','0')] - predicted[('predicted','1')]
-    predicted = predicted[('ssrt_predicted_joint','')].to_frame(name="ssrt_predicted_joint").reset_index()
-    predicted['gbe_index'] = predicted.participant.astype(str) + predicted.session.apply(lambda x: '_%03d'%int(x)).astype(str)
     predicted = predicted.set_index('gbe_index')['ssrt_predicted_joint'].to_frame()
     # Removing sessions that were not in initial dataframe
     predicted = predicted.loc[df.gbe_index.unique()]
