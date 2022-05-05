@@ -2,7 +2,7 @@
 
 __all__ = ['icc_description_dict', 'describe_iccs', 'retest_plot', 'jitter', 'analyze_reliability', 'get_psych_iccs',
            'get_model_calculated_icc', 'var_comp_plot', 'get_icc_and_variance', 'get_scores', 'get_time_effect',
-           'plot_time_effect', 'plot_time_effect_area']
+           'plot_time_effect', 'plot_time_effect_area', 'decompose_within_between']
 
 # Cell
 from scipy.stats import pearsonr
@@ -223,3 +223,22 @@ def plot_time_effect_area(_df, sessions, dependent, legend = False):
     ax = df[['participant','session','residual']].plot.area(legend = legend)
     df['icc'].plot(color = 'white', linestyle = '--')
     ax.xaxis.get_major_locator().set_params(integer=True)
+
+# Cell
+def decompose_within_between(df, columns=None, groupby='participant', result='both', drop = True):
+    if not columns:
+        columns = list(df.columns.drop(groupby))
+    # New column names
+    within_columns = [c+'_within' for c in columns]
+    between_columns = [c+'_between' for c in columns]
+    # Calculating cluster means
+    cluster_means = df.groupby('participant')[columns].transform('mean')
+    # Subtracting cluster means from initial data to get within effects
+    if (result=='both') or (result=='within'):
+        df[within_columns] = df[columns] - cluster_means
+    # Subtracting cluster means from initial data to get within effects
+    if (result=='both') or (result=='between'):
+        df[between_columns] = cluster_means - df[columns].mean()
+    if drop:
+        df = df.drop(columns = columns)
+    return df
