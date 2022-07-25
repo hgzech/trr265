@@ -220,7 +220,7 @@ def get_phone_data(self:DataProvider):
        'test002', 'test003', 'test004', 'test005', 'test01', 'test02',
        'test03', 'test0722', 'test1', 'test34', 'test999', 'test2020',
        'test20201', 'test345345', 'testt', 'test_10', 'test_11_26',
-       'test_neu', 'xx956','050262', '050335', '050402', '050416', '051005', '294932', '891752080', '898922719', '898922899', '917702419', '01627712983', 'meow', 'test0022', 'test246', 'test5647', 'test22222', 'test41514', 'testtt', 'test_057', 'tets','898923271', 'test001', 'test006', 'test007', 'test008', 'test11', 'test_23_12', 'test_n','50744', 'test0001a', 'test004', 'test03', 'tets']
+       'test_neu', 'xx956','050262', '050335', '050402', '050416', '051005', '294932', '891752080', '898922719', '898922899', '917702419', '01627712983', 'meow', 'test0022', 'test246', 'test5647', 'test22222', 'test41514', 'testtt', 'test_057', 'tets','898923271', 'test001', 'test006', 'test007', 'test008', 'test11', 'test_23_12', 'test_n','50744', 'test0001a', 'test004', 'test03', 'tets', 'test_neu', 'xx956','050262', '050335', '050402', '050416', '051005', '294932', '891752080', '898922719', '898922899', '917702419', '01627712983', 'meow', 'test0022', 'test246', 'test5647', 'test22222', 'test41514', 'testtt', 'test_057']
     df = df[~df.participant_id.astype(str).isin(remove)]
 
     bad_ids = df[~df.participant_id.apply(self.check_participant_id)].participant_id.unique()
@@ -238,7 +238,7 @@ def get_phone_data(self:DataProvider):
 @patch
 @get_efficiently
 def get_ba_codebook(self:DataProvider):
-    tables = pd.read_html(open(self.ba_codebook_path,"r").read())
+    tables = pd.read_html(open(self.ba_codebook_path,"r", encoding ='UTF-8').read())
     df = tables[1]
     # Note that str.contains fills NaN values with nan, which can lead to strange results during filtering
     df = df[df.LabelHinweistext.str.contains('Fragebogen:',na=False)==False]
@@ -277,7 +277,7 @@ def get_ba_data(self:DataProvider):
         df[new_id].fillna('nan',inplace = True)
         df.loc[df[new_id].str.contains('nan'),new_id] = np.nan
     # Removing test participants
-    remove = ['050744', 'hdfghadgfh', 'LindaEngel', 'test', 'Test001', 'Test001a', 'test0011', 'test0012', 'test0013', 'test0014', 'test0015', 'test002', 'test00229', 'test007', 'test01', 'test012', 'test013', 'test1', 'test2', 'test4', 'test12', 'test999', 'test2021', 'test345345', 'testneu', 'testtest', 'test_0720', 'test_10', 'test_GA', 'Test_JH','test0016','891752080', 'pipingTest', 'test0001', 'test00012', 'test0012a', 'test0015a', 'test0017', 'test10', 'test20212', 'testJohn01', 'test_00213', 'test_00233', 'test_00271', 'test_003', 'test_004', 'test_11_26', 'Test_MS','898922899', 'tesst', 'test0002', 'test0908', 'test092384750398475', 'test43', 'test123', 'test1233', 'test3425', 'test123456', 'test1234567', 'testfu3', 'test_888', 'test_999', 'test_98375983745', 'Test_Übung','050335', 'test003', 'test02', 'test111', 'test1111', 'test1234','test0000', 'test_CH','50744', 'test0001a', 'test004', 'test03', 'tets']
+    remove = ['050744', 'hdfghadgfh', 'LindaEngel', 'test', 'Test001', 'Test001a', 'test0011', 'test0012', 'test0013', 'test0014', 'test0015', 'test002', 'test00229', 'test007', 'test01', 'test012', 'test013', 'test1', 'test2', 'test4', 'test12', 'test999', 'test2021', 'test345345', 'testneu', 'testtest', 'test_0720', 'test_10', 'test_GA', 'Test_JH','test0016','891752080', 'pipingTest', 'test0001', 'test00012', 'test0012a', 'test0015a', 'test0017', 'test10', 'test20212', 'testJohn01', 'test_00213', 'test_00233', 'test_00271', 'test_003', 'test_004', 'test_11_26', 'Test_MS','898922899', 'tesst', 'test0002', 'test0908', 'test092384750398475', 'test43', 'test123', 'test1233', 'test3425', 'test123456', 'test1234567', 'testfu3', 'test_888', 'test_999', 'test_98375983745', 'Test_Übung','050335', 'test003', 'test02', 'test111', 'test1111', 'test1234','test0000', 'test_CH','50744', 'test0001a', 'test004', 'test03', 'tets','test009', 'test22', 'test912', 'test3003', 'test11111', 'test_MH']
     df = df[~df.participant_id.astype(str).isin(remove)]
     # Checking participant ids (to find new test participants)
     bad_ids = df[~df.participant_id.apply(self.check_participant_id)].participant_id.unique()
@@ -324,7 +324,8 @@ def get_duplicate_mov_ids(self:DataProvider):
         del replace_dict[np.nan]
     except:
         pass
-    del replace_dict[None]
+    if None in replace_dict.keys():
+        del replace_dict[None]
     replace_dict['d033'] = 'd092' # This participant's data is currently missing in redcap, but they did change ID from 33 to 92
     return replace_dict
 
@@ -398,7 +399,7 @@ def get_mov_data(self:DataProvider):
     ids_table.columns = ['redcap_id']
     df = df.merge(ids_table, left_on='participant', right_index = True, how = 'left')
     # Filtering out participants with no associated redcap data
-    no_redcap = df.query("redcap_id.isna()").participant.unique()
+    no_redcap = df.query("redcap_id.isna()", engine="python").participant.unique()
     print("Participants: %s have no associated redcap IDs and are excluded from the following analyses."%', '.join(no_redcap))
     df = df[df.redcap_id.isna()==False]
     return df
@@ -439,14 +440,15 @@ def get_two_day_data(self:DataProvider):
         df = df.reindex(dates)
         df.index.names = ['date']
         df[['starting_date','sampling_day']] = df[['starting_date','sampling_day']].bfill().ffill()
+        # 3) Shifting back retrospective answers
+        df['drinks'] = df['drinks_gestern'].shift(-1) # Drinks yesterday get shifted back one day
+        df['drinks'].fillna(df['drinks_vorgestern'].shift(-2), inplace = True) # Drinks before yesterday shift back two days
+        df['limit'] = df.Limit.ffill(limit=8) # Limit gets repeated forward for eight days
+        df['control'] = df.Kontrolle.bfill(limit=8) # Control is repeated backward for eight days
         return df
     df = df.set_index('date').groupby('participant').apply(add_missing_data).drop(columns='participant').reset_index()
 
-    # 3) Shifting back retrospective answers
-    df['drinks'] = df['drinks_gestern'].shift(-1) # Drinks yesterday get shifted back one day
-    df['drinks'].fillna(df['drinks_vorgestern'].shift(-2), inplace = True) # Drinks before yesterday shift back two days
-    df['limit'] = df.Limit.ffill(limit=8) # Limit gets repeated forward for eight days
-    df['control'] = df.Kontrolle.bfill(limit=8) # Control is repeated backward for eight days
+
     # 4) Calculating daily alcohol consumption in grams
     alc_dict = {"Anzahl"+k:v for k,v in self.get_alcohol_per_drink().set_index('drink')['ml_alc_per_drink'].to_dict().items()}
     def calculate_g_alc(x):
