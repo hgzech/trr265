@@ -289,7 +289,7 @@ def get_ba_data(self:DataProvider):
     # Setting dtypes based on codebook
     df = self.set_dtypes(df, self.get_ba_codebook())
     # Creating convenience variables
-    df['is_female'] = df.screen_gender.replace({1:0,2:1,3:np.nan})
+    df['is_female'] = df.screen_gender.replace({1:1,2:0,3:np.nan})
     # Filling in missings from baseline
     df['is_female'].fillna(df.bx_sozio_gender.replace({1:0,2:1,3:np.nan}), inplace = True)
     df['is_female'] = df.groupby('participant_id')['is_female'].transform(lambda x: x.ffill().bfill())
@@ -463,4 +463,4 @@ def get_two_day_data(self:DataProvider):
     df = df.reset_index()
     df['sampling_day'] = df.groupby('participant').starting_date.cumcount() + 1
     df.index.rename('two_day_index',inplace = True)
-    return df[['mov_index','participant','starting_date','date','sampling_day'] + mdbf_columns + ['soziale_isolation','alternative_rewards','craving','limit','control','drinks','g_alc']]
+    return df[['mov_index','participant','starting_date','date','sampling_day'] + mdbf_columns + ['soziale_isolation','alternative_rewards','craving','Limit','limit','Kontrolle','control','drinks','g_alc']]

@@ -98,9 +98,9 @@ index = {"DataProvider": "01_data_provider.ipynb",
          "custom_params": "20_plotting.ipynb",
          "icc_comparison_plot": "20_plotting.ipynb",
          "get_intense_drinking_data": "24_gbe.rtt.intense_sampling.ipynb",
-         "pearson_r": "25_gbe.ema_drinking.ipynb",
-         "lmer": "25_gbe.ema_drinking.ipynb",
-         "cor": "25_gbe.ema_drinking.ipynb"}
+         "pearson_r": "25_gbe.ema_drinking_checkpoint.ipynb",
+         "lmer": "25_gbe.ema_drinking_checkpoint.ipynb",
+         "cor": "25_gbe.ema_drinking_checkpoint.ipynb"}
 
 modules = ["data_provider.py",
            "gbe/data_provider.py",
