@@ -119,7 +119,7 @@ def determine_phone_b07(self:DataProvider, df):
     dd_screeners = clean_screeners(dd_screeners)
 
     b07_screeners = ['ann-kathrin stock','charlotte blum','josephine kirschgens','klara macht','borchardt','marta ledro','miriam petasch','mona hofmann','theo tester']
-    s01_screeners = ['esther preuschhof', 'miriam schmitz', 'sebastian möricke', 'jessica zimmermann', 'leonard visser', 'anna-lena lünert', 'anne dörfler', 'dominic reichert', 'maike borchardt', 'dorothee scheuermann', 'paula böhlmann', 'alice','josephine kirschgens maxi stiller', 'maria schießl', '22.10.2021', 'sascha', '03.08.2021', 'mariana plumbohm', 'caroline neumer', '04.08.2021', 'maxi stiller', 'sacsha', '09.08.2021', 'ml', 'charlotte', 'charlotte heinze', 'shereen', 'test', "charlotte heinze", 'benedikt']
+    s01_screeners = ['esther preuschhof', 'miriam schmitz', 'sebastian möricke', 'jessica zimmermann', 'leonard visser', 'anna-lena lünert', 'anne dörfler', 'dominic reichert', 'maike borchardt', 'dorothee scheuermann', 'paula böhlmann', 'alice','josephine kirschgens maxi stiller', 'maria schießl', '22.10.2021', 'sascha', '03.08.2021', 'mariana plumbohm', 'caroline neumer', '04.08.2021', 'maxi stiller', 'sacsha', '09.08.2021', 'ml', 'charlotte', 'charlotte heinze', 'shereen', 'test', "charlotte heinze", 'benedikt','"charlotte heinze"', 'shereen qedra', 'antonia hunnius', 'anna-lena', 'anna wildenauer', 'antonia', 'anni dittrich']
     known_dd_screeners = list(b07_screeners+s01_screeners)
     dd_screeners = df[(df.center=='d')&(df.screen_caller.isna()==False)].screen_caller.unique()
     # Checking if all Dresden phone screeners are accounted for
@@ -220,7 +220,7 @@ def get_phone_data(self:DataProvider):
        'test002', 'test003', 'test004', 'test005', 'test01', 'test02',
        'test03', 'test0722', 'test1', 'test34', 'test999', 'test2020',
        'test20201', 'test345345', 'testt', 'test_10', 'test_11_26',
-       'test_neu', 'xx956','050262', '050335', '050402', '050416', '051005', '294932', '891752080', '898922719', '898922899', '917702419', '01627712983', 'meow', 'test0022', 'test246', 'test5647', 'test22222', 'test41514', 'testtt', 'test_057', 'tets','898923271', 'test001', 'test006', 'test007', 'test008', 'test11', 'test_23_12', 'test_n','50744', 'test0001a', 'test004', 'test03', 'tets', 'test_neu', 'xx956','050262', '050335', '050402', '050416', '051005', '294932', '891752080', '898922719', '898922899', '917702419', '01627712983', 'meow', 'test0022', 'test246', 'test5647', 'test22222', 'test41514', 'testtt', 'test_057']
+       'test_neu', 'xx956','050262', '050335', '050402', '050416', '051005', '294932', '891752080', '898922719', '898922899', '917702419', '01627712983', 'meow', 'test0022', 'test246', 'test5647', 'test22222', 'test41514', 'testtt', 'test_057', 'tets','898923271', 'test001', 'test006', 'test007', 'test008', 'test11', 'test_23_12', 'test_n','50744', 'test0001a', 'test004', 'test03', 'tets', 'test_neu', 'xx956','050262', '050335', '050402', '050416', '051005', '294932', '891752080', '898922719', '898922899', '917702419', '01627712983', 'meow', 'test0022', 'test246', 'test5647', 'test22222', 'test41514', 'testtt', 'test_057','050687', '5505538', '34567896', '123456789', '978770809', 'test0012', 'test0012a', 'test00123', 'test0013', 'test0016', 'test009', 'test010', 'test011', 'test012', 'test013', 'test22', 'test33', 'test123', 'test203', 'test227', 'test22223', 'testtestt', 'test_001', 'tets2']
     df = df[~df.participant_id.astype(str).isin(remove)]
 
     bad_ids = df[~df.participant_id.apply(self.check_participant_id)].participant_id.unique()
@@ -232,6 +232,7 @@ def get_phone_data(self:DataProvider):
     df['screen_date'] = pd.to_datetime(df['screen_date'], errors = 'coerce')
     #display(df[df.screen_caller.isna()])
     df = self.determine_phone_b07(df)
+    df['participant_id'] = df.participant_id.apply(lambda x: '%05d'%int(x))
     return df
 
 # Cell
@@ -277,7 +278,7 @@ def get_ba_data(self:DataProvider):
         df[new_id].fillna('nan',inplace = True)
         df.loc[df[new_id].str.contains('nan'),new_id] = np.nan
     # Removing test participants
-    remove = ['050744', 'hdfghadgfh', 'LindaEngel', 'test', 'Test001', 'Test001a', 'test0011', 'test0012', 'test0013', 'test0014', 'test0015', 'test002', 'test00229', 'test007', 'test01', 'test012', 'test013', 'test1', 'test2', 'test4', 'test12', 'test999', 'test2021', 'test345345', 'testneu', 'testtest', 'test_0720', 'test_10', 'test_GA', 'Test_JH','test0016','891752080', 'pipingTest', 'test0001', 'test00012', 'test0012a', 'test0015a', 'test0017', 'test10', 'test20212', 'testJohn01', 'test_00213', 'test_00233', 'test_00271', 'test_003', 'test_004', 'test_11_26', 'Test_MS','898922899', 'tesst', 'test0002', 'test0908', 'test092384750398475', 'test43', 'test123', 'test1233', 'test3425', 'test123456', 'test1234567', 'testfu3', 'test_888', 'test_999', 'test_98375983745', 'Test_Übung','050335', 'test003', 'test02', 'test111', 'test1111', 'test1234','test0000', 'test_CH','50744', 'test0001a', 'test004', 'test03', 'tets','test009', 'test22', 'test912', 'test3003', 'test11111', 'test_MH']
+    remove = ['050744', 'hdfghadgfh', 'LindaEngel', 'test', 'Test001', 'Test001a', 'test0011', 'test0012', 'test0013', 'test0014', 'test0015', 'test002', 'test00229', 'test007', 'test01', 'test012', 'test013', 'test1', 'test2', 'test4', 'test12', 'test999', 'test2021', 'test345345', 'testneu', 'testtest', 'test_0720', 'test_10', 'test_GA', 'Test_JH','test0016','891752080', 'pipingTest', 'test0001', 'test00012', 'test0012a', 'test0015a', 'test0017', 'test10', 'test20212', 'testJohn01', 'test_00213', 'test_00233', 'test_00271', 'test_003', 'test_004', 'test_11_26', 'Test_MS','898922899', 'tesst', 'test0002', 'test0908', 'test092384750398475', 'test43', 'test123', 'test1233', 'test3425', 'test123456', 'test1234567', 'testfu3', 'test_888', 'test_999', 'test_98375983745', 'Test_Übung','050335', 'test003', 'test02', 'test111', 'test1111', 'test1234','test0000', 'test_CH','50744', 'test0001a', 'test004', 'test03', 'tets','test009', 'test22', 'test912', 'test3003', 'test11111', 'test_MH','88888', 'test00001', 'test333', 'test_20220623']
     df = df[~df.participant_id.astype(str).isin(remove)]
     # Checking participant ids (to find new test participants)
     bad_ids = df[~df.participant_id.apply(self.check_participant_id)].participant_id.unique()
@@ -294,7 +295,7 @@ def get_ba_data(self:DataProvider):
     df['is_female'].fillna(df.bx_sozio_gender.replace({1:0,2:1,3:np.nan}), inplace = True)
     df['is_female'] = df.groupby('participant_id')['is_female'].transform(lambda x: x.ffill().bfill())
     df['is_female'] = df['is_female'].astype(float)
-
+    df['participant_id'] = df.participant_id.apply(lambda x: '%05d'%int(x))
     return df
 
 # Cell
@@ -331,6 +332,17 @@ def get_duplicate_mov_ids(self:DataProvider):
 
 # Cell
 @patch
+def get_old_mov_ids(self:DataProvider):
+    old_ids = {}
+    for old_id, new_id in self.get_duplicate_mov_ids().items():
+        if new_id not in old_ids.keys():
+            old_ids[new_id] = old_id
+        else:
+            old_ids[new_id] += ', '+old_id
+    return old_ids
+
+# Cell
+@patch
 @get_efficiently
 def get_mov_data(self:DataProvider):
     """
@@ -357,6 +369,7 @@ def get_mov_data(self:DataProvider):
 
     # Merging double IDs (for participants with several movisense IDs)
     df['participant'] = df.participant.replace(self.get_duplicate_mov_ids())
+    df['old_ids'] = df.participant.replace(self.get_old_mov_ids())
 
     # Removing pilot participants
     df = df[~df.participant.astype(str).str.contains('test')]
@@ -392,7 +405,7 @@ def get_mov_data(self:DataProvider):
     # Calculating movisense sampling day, adding date and end_date
     df['sampling_day'] = (df['trigger_date'] - df['starting_date']).dt.days + 1
     df['date'] = df.trigger_date.dt.date
-    df['end_date'] = df.date + pd.DateOffset(days = 365)
+    df['end_date'] = df.starting_date + pd.DateOffset(days = 365)
     df.index.rename('mov_index',inplace = True)
     # Adding redcap IDs
     ids_table = self.get_ba_data()[['participant_id','mov_id']].query('mov_id==mov_id').groupby('mov_id').first()
@@ -425,7 +438,7 @@ def get_two_day_data(self:DataProvider):
     mov_data = self.get_mov_data().reset_index()
     drinking_columns = [c for c in mov_data.columns if c.startswith("Anzahl") and "10day" not in c]
     mdbf_columns = [c for c in mov_data.columns if "MDBF" in c and "INT" not in c]
-    two_day_columns = ['mov_index','starting_date','end_date','sampling_day'] + drinking_columns + mdbf_columns + ['soziale_isolation','alternative_rewards','craving','Limit','Kontrolle']
+    two_day_columns = ['mov_index','starting_date','end_date','sampling_day'] + drinking_columns + mdbf_columns + ['soziale_isolation','alternative_rewards','craving','Limit','Kontrolle','Form_upload_date']
     # 1) Turning df into one line per date
     two_day_forms = ["Coverage","Soziale Isolation","Craving","MDBF","Alternative Rewards","Limits & Control"]
     df = mov_data.sort_values(by=['participant','trigger_date','Form','Trigger_counter'])
@@ -445,6 +458,8 @@ def get_two_day_data(self:DataProvider):
         df['drinks'].fillna(df['drinks_vorgestern'].shift(-2), inplace = True) # Drinks before yesterday shift back two days
         df['limit'] = df.Limit.ffill(limit=8) # Limit gets repeated forward for eight days
         df['control'] = df.Kontrolle.bfill(limit=8) # Control is repeated backward for eight days
+        df['upload'] = df.Form_upload_date.shift(-1)
+        df['upload'] = df.upload.bfill(limit=1)
         return df
     df = df.set_index('date').groupby('participant').apply(add_missing_data).drop(columns='participant').reset_index()
 
@@ -465,4 +480,4 @@ def get_two_day_data(self:DataProvider):
     df = df.reset_index()
     df['sampling_day'] = df.groupby('participant').starting_date.cumcount() + 1
     df.index.rename('two_day_index',inplace = True)
-    return df[['mov_index','participant','starting_date','date','sampling_day'] + mdbf_columns + ['soziale_isolation','alternative_rewards','craving','Limit','limit','Kontrolle','control','drinks','g_alc']]
+    return df[['mov_index','participant','starting_date','date','sampling_day'] + mdbf_columns + ['soziale_isolation','alternative_rewards','craving','Limit','limit','Kontrolle','control','drinks','g_alc','drinks_vorgestern','drinks_gestern','upload']]

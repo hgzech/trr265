@@ -16,6 +16,7 @@ index = {"DataProvider": "01_data_provider.ipynb",
          "DataProvider.get_ba_data": "01_data_provider.ipynb",
          "DataProvider.get_baseline_drinking_data": "01_data_provider.ipynb",
          "DataProvider.get_duplicate_mov_ids": "01_data_provider.ipynb",
+         "DataProvider.get_old_mov_ids": "01_data_provider.ipynb",
          "DataProvider.get_mov_data": "01_data_provider.ipynb",
          "DataProvider.get_alcohol_per_drink": "01_data_provider.ipynb",
          "DataProvider.get_two_day_data": "01_data_provider.ipynb",
@@ -98,9 +99,9 @@ index = {"DataProvider": "01_data_provider.ipynb",
          "custom_params": "20_plotting.ipynb",
          "icc_comparison_plot": "20_plotting.ipynb",
          "get_intense_drinking_data": "24_gbe.rtt.intense_sampling.ipynb",
-         "pearson_r": "25_gbe.ema_drinking_checkpoint.ipynb",
-         "lmer": "25_gbe.ema_drinking_checkpoint.ipynb",
-         "cor": "25_gbe.ema_drinking_checkpoint.ipynb"}
+         "pearson_r": "30_gbe.longitudinal_data.ipynb",
+         "lmer": "30_gbe.longitudinal_data.ipynb",
+         "cor": "30_gbe.longitudinal_data.ipynb"}
 
 modules = ["data_provider.py",
            "gbe/data_provider.py",
@@ -124,7 +125,8 @@ modules = ["data_provider.py",
            "gbe/rtt/singular_fit_inspection.py",
            "gbe/baseline_drinking/separate.py",
            "gbe/intense_sampling.py",
-           "gbe/ema_drinking.py"]
+           "gbe/ema_drinking.py",
+           "gbe/longitudinal_data.py"]
 
 doc_url = "https://hgzech.github.io/trr265/"
 
